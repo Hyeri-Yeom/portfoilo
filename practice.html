@@ -1,0 +1,105 @@
+<!-- ✅ HTML -->
+<section class="section kbrand">
+  <div class="textBox en">K-Brand <span class="en1">W</span>eb Design & Develop</div>
+  <div class="scrollBox">
+    <div class="listWrap">
+      <div class="listBox">
+        <p class="img"><img src="img/slide1.jpg" alt=""></p>
+        <div class="inform">
+          <h3 class="en2">K-Brand Web Design</h3>
+          <p>브랜드 아이덴티티를 반영한 웹사이트를 제작하였습니다</p>
+        </div>
+      </div>
+      <div class="listBox">
+        <p class="img"><img src="img/slide2.jpg" alt=""></p>
+        <div class="inform">
+          <h3 class="en2">Responsive Design</h3>
+          <p>모든 디바이스에 맞는 반응형 레이아웃을 구현했습니다</p>
+        </div>
+      </div>
+      <div class="listBox">
+        <p class="img"><img src="img/slide3.jpg" alt=""></p>
+        <div class="inform">
+          <h3 class="en2">Team Collaboration</h3>
+          <p>기획부터 퍼블리싱까지 팀으로 협업했습니다</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ CSS -->
+<style>
+.kbrand {
+  width: 100%;
+  height: 100vh;
+  background: #f9f9f6;
+  overflow: hidden;
+  position: relative;
+}
+.kbrand .textBox {
+  text-align: center;
+  padding-top: 130px;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+  color: #1d1d1d;
+}
+.kbrand .scrollBox {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.kbrand .listWrap {
+  display: flex;
+  height: 100%;
+}
+.kbrand .listBox {
+  flex: 0 0 100vw;
+  box-sizing: border-box;
+  padding: 50px;
+  text-align: center;
+  color: #1d1d1d;
+}
+.kbrand .img {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+.kbrand .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.kbrand .inform {
+  margin-top: 20px;
+}
+.kbrand .en2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+</style>
+
+<!-- ✅ JS (GSAP + ScrollTrigger 필요) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  const totalSlides = document.querySelectorAll('.kbrand .listBox').length;
+  const slideWidth = 100 * (totalSlides - 1);
+
+  gsap.to(".kbrand .listWrap", {
+    xPercent: -slideWidth,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".kbrand",
+      start: "top top",
+      end: "+=" + window.innerWidth * totalSlides,
+      scrub: 1,
+      pin: true,
+      anticipatePin: 1,
+      // markers: true
+    }
+  });
+</script>
