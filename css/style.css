@@ -13,11 +13,11 @@ a:focus {outline: none}
 button:focus {outline: none}
 
 /* 공통요소 */
-body {font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;color: #fff;font-size: 18px;font-weight: 400;background: #f9f9f6;}
+body {font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;color: #fff;font-size: 18px;font-weight: 400;background: #000;}
 .wrap{width: 100%; overflow: hidden;margin: 0 auto;position: relative;}
 .contents {position: relative;z-index: 1;margin-bottom: 70vh;border-bottom-right-radius: 2rem;border-bottom-left-radius: 2rem;overflow: hidden;background: #0d0d0d;}
 .en{font-family: "Inter", sans-serif;}
-.en1{font-family: "Great Vibes", cursive;}
+.en1{font-family: 'Carien', sans-serif;font-weight: 500;}
 .en2{font-family: "Cormorant", serif;font-style:italic;font-weight: 500;}
 .textBox {font-size: 98px;font-weight: 500;}
 .textBox .smallText {font-size: 18px;font-weight: normal;}
@@ -35,21 +35,71 @@ header:not(.on) {top: -100px;}
 .innerHeader .rightTop .contact {margin-right: 50px;font-weight: normal;font-size: 14px;}
 .innerHeader .rightTop .logo {display: inline-block;margin-top: 3px;}
 .innerHeader .rightTop .logo img {transition: transform 0.6s ease; }
-
 /* visual */
-.visual {background: #0d0d0d;height: 100vh;width: 100%;position: relative;opacity: 0;}
-.visual .innerVisual {margin: 0 auto;font-size: 7vw;padding-top: 220px;width: 60%;max-width: 1400px;line-height:0;box-sizing: border-box;}
-.visual .innerVisual .circleimg {display: inline-block;border-radius: 50px;width: 170px;height: 90px;overflow: hidden;background: url(../img/img-contact.jpg) no-repeat;background-size: cover;}
-.visual .innerVisual .top {box-sizing: border-box;margin-bottom: 60px;opacity: 0;}
-.visual .innerVisual .top .iconPink {margin-right: 20px;}
-.visual .innerVisual .top .iconPink img{margin-bottom: 20px;}
-.visual .innerVisual .middle {margin-bottom: 60px;opacity: 0;}
-.visual .innerVisual .middle .iconOrange {margin-left: 20px;}
-.visual .innerVisual .middle .hye.en2 {font-style:italic;font-weight: 500;}
-.visual .innerVisual .bottom{opacity: 0;}
-.visual .innerVisual .bottom .iconBlue {margin-right: 20px;}
-.visual .innerVisual .bottom .connects{font-style:italic;font-weight: 500;}
-.visual .scrolldown {position: absolute;right: 5vw;bottom: 5vw;}
+.visual .innerVisual {
+  max-width: 1618px;
+  margin:0 auto;
+  padding: 80px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+
+.visual .top h2 {
+  font-size: 150px;
+  color: #fff;
+  float: right;
+}
+
+.visual .top,.visual .middle,.visual .bottom{opacity: 0;}
+.visual .middle {
+  display: flex;
+  align-items: flex-start;
+  justify-content: left;
+}
+
+.visual .middle h2 {
+  font-size: 150px;
+  color: #fff;
+  margin: 0;
+}
+
+.visual .middle .visual__desc {
+  margin-top: 12px;
+  margin-left: 24px;
+}
+
+.visual .middle .visual__desc p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #dcdcdc;
+  margin: 4px 0;
+}
+
+.visual .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.visual .bottom h2 {
+  font-size: 150px;
+  color: #fff;
+}
+
+.visual .bottom h2 span {
+  color: #a7cb3d;
+}
+
+.visual .star img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  position: absolute;
+}
+
+
 
 /* aboutme */
 .aboutme .inner .keyBox li .hiddenTxt {display: none;transition: all 0.4s;}
