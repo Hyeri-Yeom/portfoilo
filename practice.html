@@ -1,105 +1,76 @@
-<!-- ✅ HTML -->
-<section class="section kbrand">
-  <div class="textBox en">K-Brand <span class="en1">W</span>eb Design & Develop</div>
-  <div class="scrollBox">
-    <div class="listWrap">
-      <div class="listBox">
-        <p class="img"><img src="img/slide1.jpg" alt=""></p>
-        <div class="inform">
-          <h3 class="en2">K-Brand Web Design</h3>
-          <p>브랜드 아이덴티티를 반영한 웹사이트를 제작하였습니다</p>
-        </div>
-      </div>
-      <div class="listBox">
-        <p class="img"><img src="img/slide2.jpg" alt=""></p>
-        <div class="inform">
-          <h3 class="en2">Responsive Design</h3>
-          <p>모든 디바이스에 맞는 반응형 레이아웃을 구현했습니다</p>
-        </div>
-      </div>
-      <div class="listBox">
-        <p class="img"><img src="img/slide3.jpg" alt=""></p>
-        <div class="inform">
-          <h3 class="en2">Team Collaboration</h3>
-          <p>기획부터 퍼블리싱까지 팀으로 협업했습니다</p>
-        </div>
-      </div>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>스크롤 색 채우기 예제</title>
+<style>
+  body, html {
+    margin: 0; padding: 0;
+    height: 200vh; /* 스크롤 생기도록 */
+    background: black;
+    font-family: Arial, sans-serif;
+    color: #888;  /* 기본 회색 텍스트 */
+  }
+  .bgText {
+    position: relative;
+    height: 100vh;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .textWrapper {
+  position: relative;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 1.4;
+  max-width: 900px;
+  width: 100%;
+  height: 140px; /* 예시: 텍스트 2줄 정도 높이 */
+  overflow: hidden; /* 영역 넘치는 텍스트 숨김 */
+}
+  .textGray {
+    color: #888;
+  }
+  .textColor {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 0%;
+    color: white;
+    overflow: hidden;
+    transition: height 0.3s ease-out;
+    z-index: 1;
+    pointer-events: none; /* 클릭 막기 */
+  }
+</style>
+</head>
+<body>
+
+<div class="bgText">
+  <div class="textWrapper">
+    <div class="textGray">
+      A harmonious blend of modern clarity and timeless elegance through typography.
+    </div>
+    <div class="textColor" id="colorText">
+      A harmonious blend of modern clarity and timeless elegance through typography.
     </div>
   </div>
-</section>
+</div>
 
-<!-- ✅ CSS -->
-<style>
-.kbrand {
-  width: 100%;
-  height: 100vh;
-  background: #f9f9f6;
-  overflow: hidden;
-  position: relative;
-}
-.kbrand .textBox {
-  text-align: center;
-  padding-top: 130px;
-  box-sizing: border-box;
-  margin-bottom: 30px;
-  color: #1d1d1d;
-}
-.kbrand .scrollBox {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-.kbrand .listWrap {
-  display: flex;
-  height: 100%;
-}
-.kbrand .listBox {
-  flex: 0 0 100vw;
-  box-sizing: border-box;
-  padding: 50px;
-  text-align: center;
-  color: #1d1d1d;
-}
-.kbrand .img {
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
-}
-.kbrand .img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.kbrand .inform {
-  margin-top: 20px;
-}
-.kbrand .en2 {
-  font-size: 30px;
-  margin-bottom: 10px;
-}
-</style>
-
-<!-- ✅ JS (GSAP + ScrollTrigger 필요) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-  gsap.registerPlugin(ScrollTrigger);
-
-  const totalSlides = document.querySelectorAll('.kbrand .listBox').length;
-  const slideWidth = 100 * (totalSlides - 1);
-
-  gsap.to(".kbrand .listWrap", {
-    xPercent: -slideWidth,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".kbrand",
-      start: "top top",
-      end: "+=" + window.innerWidth * totalSlides,
-      scrub: 1,
-      pin: true,
-      anticipatePin: 1,
-      // markers: true
-    }
+  $(function() {
+    $(window).on('scroll', function() {
+      const scrollTop = $(this).scrollTop();
+      const maxScroll = 300;  // 300px 스크롤 내리면 100% 채워짐
+      const ratio = Math.min(scrollTop / maxScroll, 1);
+      $('#colorText').css('height', `${ratio * 100}%`);
+    });
   });
 </script>
+
+</body>
+</html>
