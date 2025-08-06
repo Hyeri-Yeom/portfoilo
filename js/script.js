@@ -6,6 +6,15 @@ $(document).on('click', 'a[href="#"]', function(e){
   Splitting();  //대문자로쓴다!!!
 });
 
+
+$(function() {
+	$('.animate').scrolla({
+		mobile: true, //모바일버전시 활성화
+		once: false //스크롤시 딱 한번만 하고싶을땐 true
+	});
+});
+ 
+
 $(function(){
   var lastScrollTop = 0;
   var delta = 5; // 민감도
@@ -192,42 +201,33 @@ const aboutTl = gsap.timeline({
     trigger: '.aboutme',
     start: 'top 100%',
     end: 'bottom 20%',
-    scrub: 1,
+    scrub: 2,
     // markers: true
   }
 });
 
-// aboutme 클립패스 효과 먼저
-aboutTl
-  .to('.visual', { color: '#0d0d0d', ease: 'none', duration: 2 }, 0)
-  .fromTo('.aboutme',
-    { 'clip-path': 'inset(60% round 30%)' },
-    { 'clip-path': 'inset(0% round 0%)', ease: 'none', duration: 1, height: '100vh' },
-    0
-  );
 
 // 카드 등장 (clip-path보다 약간 늦게 시작되도록 offset 설정)
 gsap.utils.toArray(".aboutme .card").forEach((card, i) => {
   if (card.classList.contains('empty')) return;
 
   gsap.fromTo(card,
-    { opacity: 0, rotateY: -60, y: 50 }, // 더 크게 회전 시작 (-60도)
+    { opacity: 0, rotateY: -60, y: 50 },
     {
       opacity: 1,
       rotateY: 0,
       y: 0,
-      ease: 'none',
-      duration: 0.6,
-      delay: i * 0.15,
+      ease: 'power2.out',
       scrollTrigger: {
         trigger: card,
         start: "top 85%",
-        toggleActions: "play none none reset",
+        end: "top 40%",     // 언제 사라질지 범위 지정
+        scrub: true,        // 스크롤에 따라 자연스럽게 애니메이션
+        // markers: true
       }
     }
   );
 });
-
 
 
 //  skill 무한반복 애니메이션
@@ -259,77 +259,49 @@ window.addEventListener("scroll", () => {
 });
 
 
-
-
-
-// workslit확대효과
-    gsap.timeline({
-        scrollTrigger:{
-            trigger:'.workList',
-            start:'top top',
-            end:'+=200',
-            scrub:1,
-            // markers:true,
-        }
-    }) 
-    
-    .fromTo(".list",
-        { scale: 1,opacity:1,ease:'none'},
-        { scale: 100,duration:10,transformOrigin:'50% 50%',ease:'none'},0)
-    .to('.workList',{background:'#f9f9f9',duration:1})
-
+// worklist 글자확대
+gsap.timeline({
+  scrollTrigger: {
+    trigger: '.workList',
+    start: 'top top',
+    end: '+=400', // ⬅ 좀 더 길게 (자연스럽게 확대되게)
+    scrub: 1,
+    pin:true
+    // markers: true,
+  }
+})
+.fromTo(".list",
+  {
+    scale: 1,
+    opacity: 1,
+  },
+  {
+    scale: 50, // 너무 부담스럽지 않게 기존 100 → 50 정도로 축소
+    opacity: 0, // 서서히 사라지게
+    ease: 'power2.inOut',
+    duration: 1,
+  }, 0
+)
+.to('.workList', {
+  background: '#f9f9f9',
+  duration: 1,
+  ease: 'power2.out'
+}, "-=0.8"); // 배경 전환은 약간 겹치게
 
 // 섹션겹치는효과
-gsap.utils.toArray('.section').forEach((section) => {
-  if (!section.classList.contains('kbrand') && !section.classList.contains('clon')) {
+// 섹션 겹치는 효과 수정 (kbrand pin 안 함)
+gsap.utils.toArray('.section').forEach((section) => { {
     ScrollTrigger.create({
       trigger: section,
       start: 'top top',
       pin: true,
       scrub: 3,
-      pinSpacing: false
+      pinSpacing: false,
     });
   }
 });
 
-
-
-const swiper = new Swiper('.swiper', {
-  slidesPerView: 'auto',
-  spaceBetween: 30,
-  loop: true,           // 자동 반복
-  freeMode: true,       // 자연스러운 드래그 효과
-  autoplay: {
-    delay: 1000,        // 3초마다 자동 슬라이드
-    disableOnInteraction: false,  // 사용자가 조작해도 자동 재생 유지
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,    // 필요 없으면 제거 가능
-  },
-  // navigation: {       // 화살표 숨기려면 아예 이 옵션 제거
-  //   nextEl: '.swiper-button-next',
-  //   prevEl: '.swiper-button-prev',
-  // },
-});
-
-// const slideWrap = document.querySelector('.kbrand .listWrap');
-// const totalSlides = slideWrap.querySelectorAll('.listBox').length;
-// const slideWidth = slideWrap.scrollWidth - window.innerWidth;
-
-// gsap.to(".kbrand .listWrap", {
-//   x: -slideWidth,
-//   ease: "none",
-//   scrollTrigger: {
-//     trigger: ".kbrand",
-//     start: "top top",
-//     end: "+=" + slideWidth,
-//     scrub: 1,
-//     pin: true,
-//     anticipatePin: 1,
-//     // markers: true
-//   }
-// });
+// 텍스트돌아가는효과
 const rotatingSections = document.querySelectorAll('.rotatingIconText');
 const isMobile = !window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
@@ -366,26 +338,7 @@ rotatingSections.forEach((section) => {
 
   
 });
-// sectionclone
-gsap.registerPlugin(ScrollTrigger);
 
-const columns = gsap.utils.toArray(".column");
-columns.forEach((col, i) => {
-  const direction = (i % 2 === 0) ? 1 : -1; // 기존대로
-  const speedFactor = (i === 1) ? 2 : 1;
-
-  gsap.to(col, {
-    y: () => direction * -window.innerHeight * 0.5 * speedFactor, // <- 여기 음수 붙임
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".section.clon",
-      start: "top top",
-      end: "bottom bottom",
-      scrub: true,
-      pin: i === 1 ? ".title-wrapper" : false,
-    }
-  });
-});
 
 // process비디오효과
 gsap.timeline({
@@ -406,18 +359,6 @@ gsap.timeline({
 
 
 
-
-// responsive video 효과
-gsap.timeline({
-    scrollTrigger:{
-        trigger:'.interactive',
-        start:'50% 100%',
-        end:'+=1000',
-        scrub:2,
-        // markers:true
-    }
-})
-.fromTo('.responsive .backgroundImg',{'clip-path':'inset(60% round 30%)'},{'clip-path':'inset(0% round 0%)',ease:'none',duration:1},0)
 
 
 
@@ -476,7 +417,26 @@ gsap.timeline({
   });
 
 
+//디자인컨셉 아이콘 회전효과
+gsap.timeline({
+  scrollTrigger: {
+    trigger: '.process',
+    start: '80% 50%',
+    end: '+=600',
+    scrub: 3,
+  //   markers: true,
+  }
+})
+.to('.iconSet li.icon2 .img img', {
+  rotate: 230, 
+  duration: 10,
+  ease: 'none'
 });
+
+
+});
+
+
 $(function () {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -496,3 +456,256 @@ $(function () {
     }
   });
 });
+
+
+
+
+
+
+
+// section kbrand 카드 스크롤 효과
+const images = gsap.utils.toArray(".kbrand-item");
+const total = images.length;
+const degree = 360 / total;
+const items = document.querySelector(".kbrand-items");
+
+let rotation = 0;
+let velocity = 0;
+let isDragging = false;
+let lastX = 0;
+
+// 초기 카드 배치 애니메이션
+const init = () => {
+  const timeline = gsap.timeline();
+
+  images.forEach((image, index) => {
+    const sign = Math.floor((index / 2) % 2) ? 1 : -1;
+    const value = Math.floor((index + 4) / 4) * 4;
+    const imageRotation = index > total - 3 ? 0 : sign * value;
+
+    gsap.set(image, {
+      rotation: imageRotation,
+      scale: 0.5,
+    });
+
+    timeline.from(image, {
+      x: () => index % 2 ? window.innerWidth + image.clientWidth * 4 : -window.innerWidth - image.clientWidth * 4,
+      y: () => window.innerHeight - image.clientHeight,
+      rotation: index % 2 ? 200 : -200,
+      scale: 4,
+      opacity: 1,
+      ease: "power4.out",
+      duration: 1,
+      delay: 0.15 * Math.floor(index / 2),
+    }, 0);
+
+    let rotationAngle = index * degree;
+
+    timeline.to(image, {
+      scale: 1,
+      duration: 0,
+    }, 0.15 * (total / 2 - 1) + 1);
+
+    timeline.to(image, {
+      transformOrigin: "center 100vh",
+      rotation: index > total / 2 ? -degree * (total - index) : rotationAngle,
+      duration: 1,
+      ease: "power1.out",
+    }, 0.15 * (total / 2 - 1) + 1);
+  });
+};
+
+// 드래그 기반 룰렛 회전
+const enableRotationDrag = () => {
+  let dragStartX = 0;
+  let dragDeltaX = 0;
+
+  const onMouseDown = (e) => {
+    isDragging = true;
+    dragStartX = e.clientX;
+    lastX = dragStartX;
+    document.body.style.cursor = 'grabbing';
+  };
+
+  const onMouseMove = (e) => {
+    if (!isDragging) return;
+
+    dragDeltaX = e.clientX - lastX;
+    rotation += dragDeltaX * 0.5; // 감도 조절
+    gsap.set(items, { rotation });
+    lastX = e.clientX;
+  };
+
+  const onMouseUp = () => {
+    if (!isDragging) return;
+    isDragging = false;
+    velocity = dragDeltaX * 0.5; // 관성 감속 시작
+    animateRotation();
+    document.body.style.cursor = 'default';
+  };
+
+  const animateRotation = () => {
+    rotation += velocity;
+    gsap.set(items, { rotation });
+    velocity *= 0.94; // 감속율
+
+    if (Math.abs(velocity) > 0.2) {
+      requestAnimationFrame(animateRotation);
+    } else {
+      velocity = 0;
+    }
+  };
+
+  // 이벤트 등록
+  items.addEventListener("mousedown", onMouseDown);
+  window.addEventListener("mousemove", onMouseMove);
+  window.addEventListener("mouseup", onMouseUp);
+};
+
+init();
+enableRotationDrag();
+
+
+
+// header
+document.querySelectorAll('.contact a').forEach(link => {
+  const text = link.textContent;
+  link.textContent = '';
+  text.split('').forEach((char, i) => {
+    const span = document.createElement('span');
+    span.textContent = char;
+    span.style.setProperty('--i', i);
+    span.style.display = 'inline-block';
+    link.appendChild(span);
+  });
+});
+
+
+// clon swiper
+document.addEventListener("DOMContentLoaded", function () {
+  const launchBtn = document.querySelector(".launch-btn");
+  const descEl = document.querySelector(".section-desc");
+
+  const links = [
+    "https://example.com/link1",
+    "https://example.com/link2",
+    "https://example.com/link3",
+    "https://example.com/link4",
+    "https://example.com/link5",
+    "https://example.com/link6",
+  ];
+
+  const descriptions = [
+    "설명 1: 첫번째 이미지에 대한 설명입니다.",
+    "설명 2: 두번째 이미지에 대한 설명입니다.",
+    "설명 3: 세번째 이미지에 대한 설명입니다.",
+    "설명 4: 네번째 이미지에 대한 설명입니다.",
+    "설명 5: 다섯번째 이미지에 대한 설명입니다.",
+    "설명 6: 여섯번째 이미지에 대한 설명입니다.",
+  ];
+
+  let swiper;
+
+  function initSwiperWithEffect(effectName) {
+    if (swiper) swiper.destroy(true, true); // 기존 swiper 초기화
+
+    let effectOptions = {};
+
+    switch (effectName) {
+      case "fade":
+        effectOptions = {
+          effect: "fade",
+          fadeEffect: { crossFade: true },
+        };
+        break;
+      case "cube":
+        effectOptions = {
+          effect: "cube",
+          cubeEffect: {
+            shadow: true,
+            slideShadows: true,
+            shadowOffset: 20,
+            shadowScale: 0.9,
+          },
+          
+        };
+        break;
+      case "coverflow":
+        effectOptions = {
+          effect: "coverflow",
+          coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          },
+        };
+        break;
+      case "flip":
+        effectOptions = {
+          effect: "flip",
+          flipEffect: {
+            slideShadows: true,
+            limitRotation: true,
+          },
+        };
+        break;
+      default:
+        effectOptions = {}; // 기본 효과 (slide)
+    }
+
+    swiper = new Swiper(".clon-swiper", {
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      ...effectOptions,
+      on: {
+        init: function () {
+          if (launchBtn) {
+            launchBtn.href = links[this.realIndex];
+            launchBtn.target = "_blank"; // ✅ 새 탭에서 열기
+          }
+          if (descEl) descEl.textContent = descriptions[this.realIndex];
+        },
+        slideChange: function () {
+          if (launchBtn) {
+            launchBtn.href = links[this.realIndex];
+            launchBtn.target = "_blank"; // ✅ 새 탭에서 열기
+          }
+          if (descEl) descEl.textContent = descriptions[this.realIndex];
+        },
+      }
+    });
+
+    // 슬라이드 호버 시 설명 변경
+    const slides = document.querySelectorAll(".clon-swiper .swiper-slide");
+    slides.forEach((slide, index) => {
+      slide.addEventListener("mouseenter", () => {
+        if (descEl) descEl.textContent = descriptions[index % descriptions.length];
+        if (launchBtn) launchBtn.href = links[index % links.length];
+        
+      });
+      slide.addEventListener("mouseleave", () => {
+        const idx = swiper.realIndex;
+        if (descEl) descEl.textContent = descriptions[idx];
+        if (launchBtn) launchBtn.href = links[idx];
+      });
+    });
+  }
+
+  // 초기화 시 원하는 효과 이름 넣으면 됨: 'fade', 'cube', 'coverflow', 'flip', ''(기본)
+  // initSwiperWithEffect("fade");
+  initSwiperWithEffect("cube");
+  // initSwiperWithEffect("coverflow");
+  // initSwiperWithEffect("flip");
+});
+
+
+

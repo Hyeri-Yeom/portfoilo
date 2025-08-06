@@ -15,10 +15,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Prata&display=swap" rel="stylesheet">
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/scrolla.jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/splitting.min.js"></script>
     <script src="js/slick.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/gh/peachananr/scrolla/jquery.scrolla.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="js/script.js" defer></script>
@@ -29,13 +30,13 @@
         <header>
             <div class="innerHeader">
                 <div class="leftTop">
-                    <p class="name en"><a href="#">HYERI</a></p>
-                    <p class="job en"><a href="#">| Web UX/UI Designer</a></p>
+                    <p class="name en"><a href="#visual">HYERI</a></p>
+                    <p class="job en"><a href="#visual">| Web UX/UI Designer</a></p>
                 </div>
                 <div class="rightTop">
-                    <p class="contact a"><a href="#">about me</a></p>
-                    <p class="contact b"><a href="#">work list</a></p>
-                    <p class="contact c"><a href="#">contact</a></p>
+                    <p class="contact a"><a href="#about-me">about me</a></p>
+                    <p class="contact b"><a href="#work-list">work list</a></p>
+                    <p class="contact c"><a href="#contact">contact</a></p>
                 </div>
             </div>
         </header>
@@ -43,41 +44,41 @@
 
 
         <div class="contents">
-            <section class="visual">
-            <div class="innerVisual">
+            <section class="visual" id="visual">
+            <div class="innerVisual animate" data-animate="motion">
                 <div class="top ">
                 <h2 class="en1">Portfolio <span>/</span> 2025</h2>
                 </div>
                 <div class="middle">
-                <div class="star left-star"><img src="/img/star1.png" alt=""></div>
+                <div class="star left-star"><img src="img/star1.png" alt=""></div>
                 <h2 class="en1">HYERI <span>/</span></h2>
-                <div class="visual__desc">
+                <div class="visual__desc" data-splitting>
                     <p>I’m Hyeri, a designer who adds Wisdom<br>— Bringing insight to design<br>that connects with users.</p>
                     <p>당신의 경험에 ‘혜’를 더하는, 디자이너 혜리입니다.<br>지혜를 담은 디자인으로 사람과 소통합니다.</p>
                 </div>
                 </div>
                 <div class="bottom">
-                <div class="star right-star"><img src="/img/star1.png" alt=""></div>
-                <h2 class="en1">DESIGNER <br><span>&</span> Publisher</h2>
+                <div class="star right-star"><img src="img/star1.png" alt=""></div>
+                <h2 class="en1">Designer <br><span>&</span> Publisher</h2>
                 </div>
             </div>
             </section>
-            <section class="about">
-                <div class="inner">
-                <h2 class="title en1">About me? Let me explain</h2>
-                <p class="hiddenimg"><img src="/img/aboutimg.png" alt=""></p>
+            <section class="about" id="about-me">
+                <div class="inner animate" data-animate = "motion">
+                <h2 class="title en1" data-splitting>About me? Let me explain</h2>
+                <p class="hiddenimg"><img src="img/aboutimg.png" alt=""></p>
                 </div>
             </section>
 
             <section class="aboutme">
-                <div class="inner">
+                <div class="inner animate" data-animate = "motion">
                 <div class="grid">
                     <div class="card vision">
-                    <p>처음의 방향이 명확해야 흐름이 이어집니다.<br>저의 디자인은 ‘비전’으로 출발합니다.</p>
+                    <p >처음의 방향이 명확해야 흐름이 이어집니다.<br>저의 디자인은 ‘비전’으로 출발합니다.</p>
                     <h3 class="en1">Vision</h3>
                     </div>
                     <div class="card center">
-                    <span class="star"><img src="/img/star2.png" alt=""></span>
+                    <span class="star"><img src="img/star2.png" alt=""></span>
                     <div class="bottom">        
                         <p class="ko">비전, 공감, 정리, 연결 —<br>저의 디자인은 이 네 가지 키워드로 완성 됩니다</p>
                         <p class="en">Vision, Empathy, Organization, and<br>Connection — These four elements shape<br>every design I create.</p></div>
@@ -103,20 +104,20 @@
             <section class="favorite">
                 <div class="textLoop">
                 <ul class="line1 en1">
-                    <li>MY FAVORITE ARCHIV<span class="en1">E</span> -! <img src="/img/star2.png" alt="" style="width: 86px;"></li>
-                    <li>MY FAVORITE ARCHIV<span class="en1">E</span> -!  <img src="/img/star2.png" alt="" style="width: 86px;"></li>
-                    <li>MY FAVORITE ARCHIV<span class="en1">E</span> -! <img src="/img/star2.png" alt="" style="width: 86px;"></li>
-                    <li>MY FAVORITE ARCHIV<span class="en1">E</span> -! <img src="/img/star2.png" alt="" style="width: 86px;"></li>
-                    <li>MY FAVORITE ARCHIV<span class="en1">E</span> -! <img src="/img/star2.png" alt="" style="width: 86px;"></li>
-                    <li>MY FAVORITE ARCHIV<span class="en1">E</span> -! <img src="/img/star2.png" alt="" style="width: 86px;"></li>
+                    <li>MY FAVORITE ARCHIV<span class="en1">E</span> -! <img src="img/star2.png" alt="" style="width: 86px;"></li>
+                    <li>MY FAVORITE ARCHIV<span class="en1">E</span> -!  <img src="img/star2.png" alt="" style="width: 86px;"></li>
+                    <li>MY FAVORITE ARCHIV<span class="en1">E</span> -! <img src="img/star2.png" alt="" style="width: 86px;"></li>
+                    <li>MY FAVORITE ARCHIV<span class="en1">E</span> -! <img src="img/star2.png" alt="" style="width: 86px;"></li>
+                    <li>MY FAVORITE ARCHIV<span class="en1">E</span> -! <img src="img/star2.png" alt="" style="width: 86px;"></li>
+                    <li>MY FAVORITE ARCHIV<span class="en1">E</span> -! <img src="img/star2.png" alt="" style="width: 86px;"></li>
                 </ul>
                 <ul class="line2 en1">
-                    <li> MY FAVORIT<span class="en1">E</span> ARCHIVE -!  <img src="/img/star2.png" alt="" style="width: 86px;"></li>
-                    <li> MY FAVORIT<span class="en1">E</span> ARCHIVE -!  <img src="/img/star2.png" alt="" style="width: 86px;"></li>
-                    <li> MY FAVORIT<span class="en1">E</span> ARCHIVE -!  <img src="/img/star2.png" alt="" style="width: 86px;"></li>
-                    <li> MY FAVORIT<span class="en1">E</span> ARCHIVE -!  <img src="/img/star2.png" alt="" style="width: 86px;"></li>
-                    <li> MY FAVORIT<span class="en1">E</span> ARCHIVE -!  <img src="/img/star2.png" alt="" style="width: 86px;"></li>
-                    <li> MY FAVORIT<span class="en1">E</span> ARCHIVE -!  <img src="/img/star2.png" alt="" style="width: 86px;"></li>
+                    <li> MY FAVORIT<span class="en1">E</span> ARCHIVE -!  <img src="img/star2.png" alt="" style="width: 86px;"></li>
+                    <li> MY FAVORIT<span class="en1">E</span> ARCHIVE -!  <img src="img/star2.png" alt="" style="width: 86px;"></li>
+                    <li> MY FAVORIT<span class="en1">E</span> ARCHIVE -!  <img src="img/star2.png" alt="" style="width: 86px;"></li>
+                    <li> MY FAVORIT<span class="en1">E</span> ARCHIVE -!  <img src="img/star2.png" alt="" style="width: 86px;"></li>
+                    <li> MY FAVORIT<span class="en1">E</span> ARCHIVE -!  <img src="img/star2.png" alt="" style="width: 86px;"></li>
+                    <li> MY FAVORIT<span class="en1">E</span> ARCHIVE -!  <img src="img/star2.png" alt="" style="width: 86px;"></li>
                 </ul>
                 </div>
             </section>
@@ -165,60 +166,70 @@
                     <h1 class="list en">LIST</h1>
                 </div>
             </section>
-            <section class="kbrand">
-                <div class="textBox ">
-                    <p class="subtitle">{ 01 }</p>
-                    <p class="maintitle en1">
-                        K-Brand Web Design & Develop
-                    </p>
+            <section class="section kbrand" id="work-list">
+                <div class="kbrand-textBox">
+                  <p class="kbrand-subtitle">{ 01 }</p>
+                  <p class="kbrand-maintitle en1">K-Brand Web Design & Develop</p>
+                  <div class="btnGroup">
+                    <button class="btn1" target="_blank">Design plan</button>
+                    <button class="btn2" target="_blank">Launch Site</button>
+                    </div>
                 </div>
-              
-                <!-- Swiper 컨테이너 -->
-                <div class="scrollBox swiper">
-                  <!-- Swiper 래퍼 -->
-                  <div class="listWrap swiper-wrapper">
-                    <!-- Swiper 슬라이드 -->
-                    <div class="listBox swiper-slide">
-                      <p class="img"><img src="img/slide1.jpg" alt=""></p>
-                      <div class="inform">
-                        <h3 class="en2">K-Brand Web Design</h3>
-                        <p>브랜드 아이덴티티를 반영한 웹사이트를 제작하였습니다</p>
+            
+                <div class="kbrand-scrollBox">
+                  <div class="kbrand-center">
+                    <div class="kbrand-items">
+                      <!-- 8개 카드 예시 -->
+                      <div class="kbrand-item">
+                        <div class="kbrand-card">
+                          <img src="img/slide1.jpg" alt="Slide 1" />
+                          <div class="kbrand-desc">이 카드는 1번째 이미지입니다.</div>
+                        </div>
                       </div>
-                    </div>
-                    <div class="listBox swiper-slide">
-                      <p class="img"><img src="img/slide2.jpg" alt=""></p>
-                      <div class="inform">
-                        <h3 class="en2">Responsive Design</h3>
-                        <p>모든 디바이스에 맞는 반응형 레이아웃을 구현했습니다</p>
+                      <div class="kbrand-item">
+                        <div class="kbrand-card">
+                          <img src="img/slide2.jpg" alt="Slide 2" />
+                          <div class="kbrand-desc">이 카드는 2번째 이미지입니다.</div>
+                        </div>
                       </div>
-                    </div>
-                    <div class="listBox swiper-slide">
-                      <p class="img"><img src="img/slide3.jpg" alt=""></p>
-                      <div class="inform">
-                        <h3 class="en2">Team Collaboration</h3>
-                        <p>기획부터 퍼블리싱까지 팀으로 협업했습니다</p>
+                      <div class="kbrand-item">
+                        <div class="kbrand-card">
+                          <img src="img/slide3.jpg" alt="Slide 3" />
+                          <div class="kbrand-desc">이 카드는 3번째 이미지입니다.</div>
+                        </div>
                       </div>
-                    </div>
-                    <div class="listBox swiper-slide">
-                      <p class="img"><img src="img/slide3.jpg" alt=""></p>
-                      <div class="inform">
-                        <h3 class="en2">Team Collaboration</h3>
-                        <p>기획부터 퍼블리싱까지 팀으로 협업했습니다</p>
+                      <div class="kbrand-item">
+                        <div class="kbrand-card">
+                          <img src="img/slide1.jpg" alt="Slide 4" />
+                          <div class="kbrand-desc">이 카드는 4번째 이미지입니다.</div>
+                        </div>
                       </div>
-                    </div>
-                    <div class="listBox swiper-slide">
-                      <p class="img"><img src="img/slide3.jpg" alt=""></p>
-                      <div class="inform">
-                        <h3 class="en2">Team Collaboration</h3>
-                        <p>기획부터 퍼블리싱까지 팀으로 협업했습니다</p>
+                      <div class="kbrand-item">
+                        <div class="kbrand-card">
+                          <img src="img/slide2.jpg" alt="Slide 5" />
+                          <div class="kbrand-desc">이 카드는 5번째 이미지입니다.</div>
+                        </div>
+                      </div>
+                      <div class="kbrand-item">
+                        <div class="kbrand-card">
+                          <img src="img/slide3.jpg" alt="Slide 6" />
+                          <div class="kbrand-desc">이 카드는 6번째 이미지입니다.</div>
+                        </div>
+                      </div>
+                      <div class="kbrand-item">
+                        <div class="kbrand-card">
+                          <img src="img/slide2.jpg" alt="Slide 7" />
+                          <div class="kbrand-desc">이 카드는 7번째 이미지입니다.</div>
+                        </div>
+                      </div>
+                      <div class="kbrand-item">
+                        <div class="kbrand-card">
+                          <img src="img/slide3.jpg" alt="Slide 8" />
+                          <div class="kbrand-desc">이 카드는 8번째 이미지입니다.</div>
+                        </div>
                       </div>
                     </div>
                   </div>
-              
-                  <!-- 선택적: 페이징 및 네비게이션 -->
-                  <div class="swiper-pagination"></div>
-                  <div class="swiper-button-prev"></div>
-                  <div class="swiper-button-next"></div>
                 </div>
               </section>
               
@@ -232,8 +243,8 @@
                         <span>Design & Development</span>
                         </h2>
                         <div class="btnGroup">
-                        <button class="btn1">Design plan</button>
-                        <button class="btn2">Launch Site</button>
+                        <button class="btn1" target="_blank">Design plan</button>
+                        <button class="btn2" target="_blank">Launch Site</button>
                         </div>
                 
                         <!-- data-desc 속성에 설명 문구를 넣음 -->
@@ -260,8 +271,7 @@
                             SUBWAY App <br /><span> UI/UX Renewal</span>
                         </h2>
                         <div class="btnGroup">
-                            <button class="btn1">Design plan</button>
-                            <button class="btn2">Launch Site</button>
+                            <button class="btn1" target="_blank">Design plan</button>
                         </div>
                         <!-- data-desc 속성에 설명 문구를 넣음 -->
                         <div
@@ -277,45 +287,33 @@
                 </div>
             </section>
 
-
             <section class="section clon">
-                <div class="title-wrapper">
-                  <h2 class="title">Our Glass</h2>
-                  <div class="cta-button">
-                    <button>Explore Now</button>
-                  </div>
+                <div class="left">
+                    <p class="section-number">{ 04 }</p>
+                    <h2 class="section-title en1">Clone Coding</h2>
+                    <p class="section-desc">
+                      실제 사이트를 그대로 구현하며 구조, 스타일링, 인터렉션<br />
+                      등 실전 기술을 익히기 위한 글툴 프로젝트입니다.
+                    </p>
+                    <a href="#" class="launch-btn">Launch Site</a>
                 </div>
               
-                <div id="bgWrapper" class="background">
-                  <div class="column col1">
-                    <div class="card"><img src="img1.jpg" alt=""/></div>
-                    <div class="card"><img src="img4.jpg" alt=""/></div>
-                    <div class="card"><img src="img7.jpg" alt=""/></div>
-                    <div class="card"><img src="img1.jpg" alt=""/></div>
-                    <div class="card"><img src="img4.jpg" alt=""/></div>
-                    <div class="card"><img src="img7.jpg" alt=""/></div>
-                  </div>
-                  <div class="column col2">
-                    <div class="card"><img src="img2.jpg" alt=""/></div>
-                    <div class="card"><img src="img5.jpg" alt=""/></div>
-                    <div class="card"><img src="img8.jpg" alt=""/></div>
-                    <div class="card"><img src="img2.jpg" alt=""/></div>
-                    <div class="card"><img src="img5.jpg" alt=""/></div>
-                    <div class="card"><img src="img8.jpg" alt=""/></div>
-                  </div>
-                  <div class="column col3">
-                    <div class="card"><img src="img3.jpg" alt=""/></div>
-                    <div class="card"><img src="img6.jpg" alt=""/></div>
-                    <div class="card"><img src="img9.jpg" alt=""/></div>
-                    <div class="card"><img src="img3.jpg" alt=""/></div>
-                    <div class="card"><img src="img6.jpg" alt=""/></div>
-                    <div class="card"><img src="img9.jpg" alt=""/></div>
+                <div class="right">
+                  <!-- Swiper -->
+                  <div class="swiper clon-swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide"><img src="img/clon_slide1.png" alt="Image 1" /></div>
+                      <div class="swiper-slide"><img src="img/crewalamode.png" alt="Image 2" /></div>
+                      <div class="swiper-slide"><img src="img/clon_slide1.png" alt="Image 3" /></div>
+                      <div class="swiper-slide"><img src="img/clon_slide1.png" alt="Image 4" /></div>
+                      <div class="swiper-slide"><img src="img/clon_slide1.png" alt="Image 5" /></div>
+                      <div class="swiper-slide"><img src="img/clon_slide1.png" alt="Image 6" /></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
                   </div>
                 </div>
               </section>
               
-
-
 
             <section class="process">
                 <div class="inner">
@@ -421,42 +419,58 @@
                     </ul>
                 </div>
             </section>
+
+
+
             <section class="gridsection">
-                <div class="grid-header">
-                  <h1>Deconstruct</h1>
-                  <h2>Grid System</h2>
+                <div class="title-wrap">
+                  <div class="title-group">
+                    <div class="deconstruct en">Deconstruct</div>
+                    <div class="grid-system en1">Grid System</div>
+                  </div>
                 </div>
-            
-                <div class="grid-container">
-                    <div class="grid-col">
-                      <div class="grid-info">
-                        1920px Desktop · 12 Column · Margin 120px · Gutter 24px<br />
-                        모든 UI 구성 요소는 이 그리드 시스템을 기반으로 제작됩니다.<br />
-                        텍스트, 이미지, 버튼 등을 컴포넌트 기준으로 일관되게 배치합니다.
-                      </div>
-                    </div>
-                    <!-- 나머지 11개 컬럼 -->
-                    <div class="grid-col"></div>
-                    <div class="grid-col"></div>
-                    <div class="grid-col"></div>
-                    <div class="grid-col"></div>
-                    <div class="grid-col"></div>
-                    <div class="grid-col"></div>
-                    <div class="grid-col"></div>
-                    <div class="grid-col"></div>
-                    <div class="grid-col"></div>
-                    <div class="grid-col"></div>
-                    <div class="grid-col"></div>
-                  
-                    <div class="grid-text">GRIDS</div>
-                    <div class="grid-star">✦</div>
-                    <div class="grid-labels">
-                      <div>gutter<br />24px</div>
-                      <div>width<br />119px</div>
-                      <div>margin<br />120px</div>
+              
+                <!-- 그리드 컨테이너 -->
+                <div class="container-grid">
+                    <!-- 컬럼: 기본 12개 -->
+                    <div class="colum"></div>
+                    <div class="colum"></div>
+                    <div class="colum"></div>
+                    <div class="colum"></div>
+                    <div class="colum"></div>
+                    <div class="colum"></div>
+                    <div class="colum"></div>
+                    <div class="colum"></div>
+                    <div class="colum"></div>
+                    <div class="colum"></div>
+                    <div class="colum"></div>
+                    <div class="colum"></div>
+              
+                  <!-- 설명 텍스트 -->
+                  <div class="description">
+                    <div class="line1">Grid System · 반응형 지원</div>
+                    <div>해상도별 고정 px값 적용으로 정밀한 디자인 보장</div>
+                    <div>데스크탑, 태블릿, 모바일에 맞춘 컬럼 수 구성</div>
+                  </div>
+              
+                  <!-- GRIDS 텍스트 + 별 아이콘 -->
+                  <div class="grids-wrapper">
+                    <div class="grids-text">GRIDS</div>
+                    <div class="star-icon">
+                      <img src="img/star2.png" alt="star icon" />
                     </div>
                   </div>
+              
+                  <!-- 가이드: 데스크탑에서만 표시 -->
+                  <div class="guide gutter">gutter<br>24px</div>
+                  <div class="guide width">width<br>118px</div>
+                  <div class="guide margin">margin<br>120px</div>
+
+                </div>
               </section>
+
+
+
             <section class="interactive">
                 <div class="mainTitle">
                     <div class="inner">
@@ -470,49 +484,25 @@
                     </div>
                 </div>
             </section>
-            <section class="responsive">
-                <div class="backgroundImg">
-                    <p class="img"><img src="img/responsive_bgImg.png" alt=""></p>
-                    <div class="textBox en">
-                        <p>Responsive by design,
-                        <span class="en2">intutive by intention</span></p> 
-                    </div>
-                </div>
-            </section>
-            <!-- <section class="mockupSlide">
-                <div class="inner">
-                    <div class="slideBox">
-                        <div class="backgroundText en2">
-                            <p>Crafted for clarity, built for beauty — on every screen.</p>
-                        </div>
-                        <div class="slideImg">
-                            <img src="img/mockupimg1.png" alt="">
-                        </div>
-                    </div>
-                    <div class="textBox">
-                        <p class="title">1400px</p>
-                        <p class="smallText">화면 크기에 따라 여백과 타이포그래피, 인터랙션 요소를 최적화하여, 어떤 환경에서도 콘텐츠에 몰입할 수 있도록 설계했습니다.</p>
-                    </div>
-                </div>
-            </section> -->
+    
             <section class="mockup"> 
                 <div class="background"></div>
                 <div class="inner">
-                    <div class="backgroundTextWrap en2">
+                    <div class="backgroundTextWrap en1">
                     Crafted for clarity,
                     built for beauty — on every screen.
                     </div>
                     <div class="slideContainer">
                         <div class="slide active">
                             <div class="deviceImage"><img src="img/musign-mockup.png" alt="Slide 1"/ width="700px"></div>
-                            <div class="textBox">
+                            <div class="textBox animate" data-animate="motion" data-splitting>
                                 <p class="title">1400px</p>
                                 <p class="smallText">화면 크기에 따라 여백과 타이포그래피, 인터랙션 요소를 최적화하여 콘텐츠에 몰입할 수 있도록 설계했습니다.</p>
                             </div>
                         </div>
                         <div class="slide">
                             <div class="deviceImage"><img src="img/mockupimg1.png" alt="Slide 2" /></div>
-                            <div class="textBox">
+                            <div class="textBox animate" data-animate="motion" data-splitting>
                                 <p class="title">1024px</p>
                                 <p class="smallText">태블릿 환경에서도 레이아웃이 자연스럽게 구성됩니다.</p>
                             </div>
@@ -530,28 +520,40 @@
             <section class="textBand">
                 <div class="inner">
                 <ul class="top en">
-                    <li>VISIONARY <span><img src="img/star1.png" alt=""></span></li>
-                    <li>RESPOSIBILITY <span><img src="img/star1.png" alt=""></span></li>
-                    <li>ORGANIZED <span><img src="img/star1.png" alt=""></span></li>
-                    <li>VISIONARY <span><img src="img/star1.png" alt=""></span></li>
-                    <li>RESPOSIBILITY <span><img src="img/star1.png" alt=""></span></li>
-                    <li>ORGANIZED <span><img src="img/star1.png" alt=""></span></li>
+                    <li>VISIONARY <span><img src="img/star4.png" alt=""></span></li>
+                    <li>RESPOSIBILITY <span><img src="img/star4.png" alt=""></span></li>
+                    <li>ORGANIZED <span><img src="img/star4.png" alt=""></span></li>
+                    <li>VISIONARY <span><img src="img/star4.png" alt=""></span></li>
+                    <li>RESPOSIBILITY <span><img src="img/star4.png" alt=""></span></li>
+                    <li>ORGANIZED <span><img src="img/star4.png" alt=""></span></li>
+                    <li>VISIONARY <span><img src="img/star4.png" alt=""></span></li>
+                    <li>RESPOSIBILITY <span><img src="img/star4.png" alt=""></span></li>
+                    <li>ORGANIZED <span><img src="img/star4.png" alt=""></span></li>
+                    <li>VISIONARY <span><img src="img/star4.png" alt=""></span></li>
+                    <li>RESPOSIBILITY <span><img src="img/star4.png" alt=""></span></li>
+                    <li>ORGANIZED <span><img src="img/star4.png" alt=""></span></li>
                 </ul>
                 <ul class="bottom en">
-                    <li>VISIONARY <span><img src="img/star1.png" alt=""></span></li>
-                    <li>RESPOSIBILITY <span><img src="img/star1.png" alt=""></span></li>
-                    <li>ORGANIZED <span><img src="img/star1.png" alt=""></span></li>
-                    <li>VISIONARY <span><img src="img/star1.png" alt=""></span></li>
-                    <li>RESPOSIBILITY <span><img src="img/star1.png" alt=""></span></li>
-                    <li>ORGANIZED <span><img src="img/star1.png" alt=""></span></li>
+                    <li>VISIONARY <span><img src="img/star4.png" alt=""></span></li>
+                    <li>RESPOSIBILITY <span><img src="img/star4.png" alt=""></span></li>
+                    <li>ORGANIZED <span><img src="img/star4.png" alt=""></span></li>
+                    <li>VISIONARY <span><img src="img/star4.png" alt=""></span></li>
+                    <li>RESPOSIBILITY <span><img src="img/star4.png" alt=""></span></li>
+                    <li>ORGANIZED <span><img src="img/star4.png" alt=""></span></li>
+                    <li>VISIONARY <span><img src="img/star4.png" alt=""></span></li>
+                    <li>RESPOSIBILITY <span><img src="img/star4.png" alt=""></span></li>
+                    <li>ORGANIZED <span><img src="img/star4.png" alt=""></span></li>
+                    <li>VISIONARY <span><img src="img/star4.png" alt=""></span></li>
+                    <li>RESPOSIBILITY <span><img src="img/star4.png" alt=""></span></li>
+                    <li>ORGANIZED <span><img src="img/star4.png" alt=""></span></li>
                 </ul>
             </div>
             </section>
-            <section class="start">
+            <section class="start" id="contact">
                 <div class="inner">
                     <div class="topText">
                         <p class="name en">HYERI
-                            <span class="icon"><img src="img/orangeicon.svg" alt="" width="20px"></span>
+                            <span class="icon"><img src="img/star2.png" alt="" width="30px"></span>
                             <span class="job en"> Web UX/UI Designer</span>
                         </p>
                     </div>
@@ -580,7 +582,7 @@
                 </div>
             </div>
             <div class="textBox">
-                <p>Let's create<span class="icon"><img src="img/pinkicon.svg" alt=""++></span><br>
+                <p>Let's create<span class="icon"><img src="img/star3.png" alt=""++></span><br>
                 <span class="en1">S</span><span class="en2">ometing Together</span><span class="arrow"><img src="img/arrow-white.svg" alt="" width="100px"></span>
                 </p>
             </div>
