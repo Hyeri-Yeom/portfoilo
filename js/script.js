@@ -76,7 +76,7 @@ tl.fromTo('.visual .innerVisual .bottom',{y: 100}, {opacity: 1, y: 0, ease: 'non
           start: 'top top',
           end: 'bottom top',
           scrub: true,
-          // markers:true
+          // markers:false
       }
   })
   });
@@ -108,7 +108,7 @@ $(function(){
             start:'-50% top',
             end:'bottom 100%',
             scrub:1,
-            // markers:true
+            // markers:false
         }
     }) 
     .to('.archive .inner .imgBox .img01',{x: '-300',y: '200',rotate: '-20',ease:'none',duration:3},0)
@@ -283,7 +283,7 @@ gsap.timeline({
   }, 0
 )
 .to('.workList', {
-  background: '#f9f9f9',
+  background: '#f9f9f6',
   duration: 1,
   ease: 'power2.out'
 }, "-=0.8"); // 배경 전환은 약간 겹치게
@@ -347,7 +347,7 @@ gsap.timeline({
         start:'top top',
         end:'bottom 0%',
         scrub:2,
-        // markers:true,
+        // markers:false,
         pin:true
     }
 })
@@ -407,7 +407,7 @@ gsap.timeline({
       start: '80% 50%',
       end: '+=600',
       scrub: 3,
-      markers: true,
+      // markers: true,
     }
   })
   .to('footer .inner .textBox .icon', {
@@ -706,6 +706,4 @@ document.addEventListener("DOMContentLoaded", function () {
   // initSwiperWithEffect("coverflow");
   // initSwiperWithEffect("flip");
 });
-
-
 
