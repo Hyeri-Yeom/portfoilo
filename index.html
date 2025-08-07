@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Great+Vibes&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Prata&display=swap" rel="stylesheet">
     <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="https://assets.codepen.io/16327/SplitText3.min.js"></script>
     <script src="js/scrolla.jquery.min.js"></script>
     <script src="js/splitting.min.js"></script>
     <script src="js/slick.min.js"></script>
@@ -45,24 +46,26 @@
 
         <div class="contents">
             <section class="visual" id="visual">
-            <div class="innerVisual animate" data-animate="motion">
-                <div class="top ">
-                <h2 class="en1">Portfolio <span>/</span> 2025</h2>
+                <div class="innerVisual animate" data-animate="motion">
+                  <div class="top ">
+                    <h2 class="en1" data-splitting>Portfolio <span>/</span> 2025</h2>
+                  </div>
+                  <div class="middle">
+                    <div class="star left-star"><img src="img/star1.png" alt=""></div>
+                    <h2 class="en1" data-splitting>HYERI <span>/</span></h2>
+                    <div class="visual__desc" data-splitting>
+                      <p>I’m Hyeri, a designer who adds Wisdom<br>— Bringing insight to design<br>that connects with users.</p>
+                      <p>당신의 경험에 ‘혜’를 더하는, 디자이너 혜리입니다.<br>지혜를 담은 디자인으로 사람과 소통합니다.</p>
+                    </div>
+                  </div>
+                  <div class="bottom">
+                    <div class="star right-star"><img src="img/star1.png" alt=""></div>
+                    <h2 class="en1" data-splitting>Designer <br><span class="and">&</span> Publisher</h2>
+                  </div>
                 </div>
-                <div class="middle">
-                <div class="star left-star"><img src="img/star1.png" alt=""></div>
-                <h2 class="en1">HYERI <span>/</span></h2>
-                <div class="visual__desc" data-splitting>
-                    <p>I’m Hyeri, a designer who adds Wisdom<br>— Bringing insight to design<br>that connects with users.</p>
-                    <p>당신의 경험에 ‘혜’를 더하는, 디자이너 혜리입니다.<br>지혜를 담은 디자인으로 사람과 소통합니다.</p>
-                </div>
-                </div>
-                <div class="bottom">
-                <div class="star right-star"><img src="img/star1.png" alt=""></div>
-                <h2 class="en1">Designer <br><span>&</span> Publisher</h2>
-                </div>
-            </div>
-            </section>
+              </section>
+
+
             <section class="about" id="about-me">
                 <div class="inner animate" data-animate = "motion">
                 <h2 class="title en1" data-splitting>About me? Let me explain</h2>
@@ -144,7 +147,7 @@
             </section>
             <section class="archive">
                 <div class="inner">
-                    <div class="text">
+                    <div class="text animate" data-animate="motion" data-splitting>
                         <h2 class="en1">Connects</h2>
                         <p>새로운 환경에 적응하고, 예기치 않은 변수에
                             <br>열린 마음으로 대처하면서 <br>‘공감’과 ‘유연한 사고’는 저의 중요한 자산이 되었습니다.</p>
@@ -159,9 +162,9 @@
                     </div>
                 </div>
             </section>
-            <section class="skill">
+            <section class="skill" >
                 <div class="inner">
-                  <div class="textBox en1"> { MY <span class="en1">S</span>KILLS AND <span class="en1">T</span>OOLS }</div>
+                  <div class="textBox en1 animate" data-animate="motion" data-splitting> { MY <span class="en1">S</span>KILLS AND <span class="en1">T</span>OOLS }</div>
                   <div class="scrollBox">
                     <div class="track">
                       <div class="icon">
@@ -180,141 +183,21 @@
                   </div>
                 </div>
               </section>              
-            <section class="workList">
-                <div class="inner">
-                    <p>MY</p>
-                    <h3 class="en2">Featured Work</h3>
-                    <h1 class="list en">LIST</h1>
+            <section class="section workList"  id="work-list">
+                <div class="inner animate" data-animate="motion">
+                    <h1 class="list en" data-splitting>WORK LIST</h1>
                 </div>
             </section>
-            <section class="section kbrand" id="work-list">
-                <div class="kbrand-textBox">
-                  <p class="kbrand-subtitle en1">{ 01 }</p>
-                  <p class="kbrand-maintitle en1">K-Brand Web Design & Develop</p>
-                  <div class="btnGroup ">
-                    <button class="btn1 en" target="_blank">Design plan</button>
-                    <button class="btn2 en" target="_blank">Launch Site</button>
-                    </div>
-                </div>
-            
-                <div class="kbrand-scrollBox">
-                  <div class="kbrand-center">
-                    <div class="kbrand-items">
-                      <!-- 8개 카드 예시 -->
-                      <div class="kbrand-item">
-                        <div class="kbrand-card">
-                          <img src="img/slide1.jpg" alt="Slide 1" />
-                          <div class="kbrand-desc">이 카드는 1번째 이미지입니다.</div>
-                        </div>
-                      </div>
-                      <div class="kbrand-item">
-                        <div class="kbrand-card">
-                          <img src="img/slide2.jpg" alt="Slide 2" />
-                          <div class="kbrand-desc">이 카드는 2번째 이미지입니다.</div>
-                        </div>
-                      </div>
-                      <div class="kbrand-item">
-                        <div class="kbrand-card">
-                          <img src="img/slide3.jpg" alt="Slide 3" />
-                          <div class="kbrand-desc">이 카드는 3번째 이미지입니다.</div>
-                        </div>
-                      </div>
-                      <div class="kbrand-item">
-                        <div class="kbrand-card">
-                          <img src="img/slide1.jpg" alt="Slide 4" />
-                          <div class="kbrand-desc">이 카드는 4번째 이미지입니다.</div>
-                        </div>
-                      </div>
-                      <div class="kbrand-item">
-                        <div class="kbrand-card">
-                          <img src="img/slide2.jpg" alt="Slide 5" />
-                          <div class="kbrand-desc">이 카드는 5번째 이미지입니다.</div>
-                        </div>
-                      </div>
-                      <div class="kbrand-item">
-                        <div class="kbrand-card">
-                          <img src="img/slide3.jpg" alt="Slide 6" />
-                          <div class="kbrand-desc">이 카드는 6번째 이미지입니다.</div>
-                        </div>
-                      </div>
-                      <div class="kbrand-item">
-                        <div class="kbrand-card">
-                          <img src="img/slide2.jpg" alt="Slide 7" />
-                          <div class="kbrand-desc">이 카드는 7번째 이미지입니다.</div>
-                        </div>
-                      </div>
-                      <div class="kbrand-item">
-                        <div class="kbrand-card">
-                          <img src="img/slide3.jpg" alt="Slide 8" />
-                          <div class="kbrand-desc">이 카드는 8번째 이미지입니다.</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-              
-            <!-- scrollup되는 효과  -->
-            <section class="section fandom">
-                <div class="inner">
-                    <div class="leftBox">
-                        <p class="subtitle en1"><span>{</span>02<span>}</span></p>
-                        <h2 class="maintitle en1">
-                        FANDOM APP<br />
-                        <span>Design & Development</span>
-                        </h2>
-                        <div class="btnGroup">
-                        <button class="btn1" target="_blank">Design plan</button>
-                        <button class="btn2" target="_blank">Launch Site</button>
-                        </div>
-                
-                        <!-- data-desc 속성에 설명 문구를 넣음 -->
-                        <div
-                        class="rotatingIconText"
-                        data-desc="사용자의 주문 흐름을 개선한 UX/UI 리디자인 프로젝트<br>Role: UX Research · Wireframe · UI Design · Prototype"
-                        >
-                        <img src="img/star2.png" alt="rotating icon" class="rotatingIcon" />
-                        <p class="descriptionText"></p>
-                        </div>
-                    </div>
-                    <div class="rightBox">
-                        <img src="img/fandom.png" alt="" class="img1" />
-                        <img src="img/fandom2.png" alt="" class="img2" />
-                    </div>
-                </div>
-            </section>
-              
-            <section class="section subway">
-                <div class="inner">
-                    <div class="leftBox">
-                        <p class="subtitle">{ 03 }</p>
-                        <h2 class="maintitle en1">
-                            SUBWAY App <br /><span> UI/UX Renewal</span>
-                        </h2>
-                        <div class="btnGroup">
-                            <button class="btn1" target="_blank">Design plan</button>
-                        </div>
-                        <!-- data-desc 속성에 설명 문구를 넣음 -->
-                        <div
-                            class="rotatingIconText"
-                            data-desc="사용자의 주문 흐름을 개선한 UX/UI 리디자인 프로젝트\nRole: UX Research · Wireframe · UI Design · Prototype">
-                        <img src="img/star2.png" alt="rotating icon" class="rotatingIcon" />
-                        <p class="descriptionText"></p>
-                    </div>
-                </div>
-                <div class="rightBox">
-                    <img src="img/subway_mokupimg1.png" alt="" />
-                </div>
-                </div>
-            </section>
-
             <section class="section clon">
                 <div class="inner">
                 <div class="left">
-                    <p class="section-number">{ 04 }</p>
-                    <h2 class="section-title en1">Clone Coding</h2>
-                    <a href="#" class="launch-btn">Launch Site</a>
-                    <p class="section-desc">
+                    <p class="section-number">01. Team project </p>
+                    <h2 class="section-title en1">TAMBURINS <br> Renewal Project</h2>
+                    <div class="btnGroup">
+                        <a href="https://design-plan-link.com" target="_blank" class="btn1">Design plan</a>
+                        <a href="https://launch-site-link.com" target="_blank" class="btn2">Launch Site</a>
+                      </div>
+                    <p class="clon-desc">
                       실제 사이트를 그대로 구현하며 구조, 스타일링, 인터렉션<br />
                       등 실전 기술을 익히기 위한 글툴 프로젝트입니다.
                     </p>
@@ -324,12 +207,12 @@
                   <!-- Swiper -->
                   <div class="swiper clon-swiper">
                     <div class="swiper-wrapper">
-                      <div class="swiper-slide"><img src="img/clon_slide1.png" alt="Image 1" /></div>
-                      <div class="swiper-slide"><img src="img/crewalamode.png" alt="Image 2" /></div>
-                      <div class="swiper-slide"><img src="img/clon_slide1.png" alt="Image 3" /></div>
-                      <div class="swiper-slide"><img src="img/clon_slide1.png" alt="Image 4" /></div>
-                      <div class="swiper-slide"><img src="img/clon_slide1.png" alt="Image 5" /></div>
-                      <div class="swiper-slide"><img src="img/clon_slide1.png" alt="Image 6" /></div>
+                      <div class="swiper-slide"><img src="img/tam_1.png" alt="Image 1" /></div>
+                      <div class="swiper-slide"><img src="img/tam_2.png" alt="Image 2" /></div>
+                      <div class="swiper-slide"><img src="img/tam_3.png" alt="Image 3" /></div>
+                      <div class="swiper-slide"><img src="img/tam_4.png" alt="Image 4" /></div>
+                      <div class="swiper-slide"><img src="img/tam_5.png" alt="Image 5" /></div>
+                      <div class="swiper-slide"><img src="img/tam_1.png" alt="Image 6" /></div>
                     </div>
                     <div class="swiper-pagination"></div>
                   </div>
@@ -337,8 +220,147 @@
             </div>
               </section>
               
+          
+              
+            <!-- scrollup되는 효과  -->
+            <section class="section fandom">
+                <div class="inner">
+                    <div class="leftBox">
+                        <p class="subtitle">02. Team project </p>
+                        <h2 class="maintitle en1">
+                        FANDOM APP<br />
+                        <span>Design & Development</span>
+                        </h2>
+                        <div class="btnGroup">
+                            <a href="https://design-plan-link.com" target="_blank" class="btn1">Design plan</a>
+                            <a href="https://launch-site-link.com" target="_blank" class="btn2">Launch Site</a>
+                          </div>
+                        <p class="fandom-desc">
+                            실제 사이트를 그대로 구현하며 구조, 스타일링, 인터렉션<br />
+                            등 실전 기술을 익히기 위한 글툴 프로젝트입니다.
+                          </p>
+                    </div>
+                    <div class="rightBox">
+                        <div class="swiper fandomSwiper">
+                          <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                              <img src="img/fandom.png" alt="" />
+                            </div>
+                            <div class="swiper-slide">
+                              <img src="img/fandom2.png" alt="" />
+                            </div>
+                          </div>
+                          <!-- 페이지네이션 (옵션) -->
+                          <div class="swiper-pagination"></div>
+                        </div>
+                      </div>
+                </div>
+            </section>
+              
+            <section class="section subway">
+                <div class="inner">
+                  <div class="leftBox">
+                    <p class="subtitle">03. Team project</p>
+                    <h2 class="maintitle en1">
+                      SUBWAY App <br /><span> UI/UX Renewal</span>
+                    </h2>
+                    <div class="btnGroup">
+                      <a href="https://design-plan-link.com" target="_blank" class="btn1">Design plan</a>
+                    </div>
+                      <p class="descriptionText subway-desc"></p> 
+                    </div>
+                  
+                  <div class="rightBox">
+                    <div class="swiper subwaySwiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <img src="img/subway_mokupimg1.png" alt="Subway mockup 1" />
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="img/subway_mokupimg1.png" alt="Subway mockup 2" />
+                        </div>
+                        <!-- 필요하면 슬라이드 추가 -->
+                      </div>
+                      <div class="swiper-pagination"></div>
+                    </div>
+                  </div>
+                </div>
+              </section>
 
-            <section class="process">
+
+
+            <section class="kbrand">
+                <div class="kbrand-textBox animate" data-animate="motion">
+                  <p class="kbrand-subtitle" data-splitting="">04. Clon works</p>
+                  <p class="kbrand-maintitle en1" data-splitting="">Clone Coding Project</p>
+                  <p class="kbrand-description" data-splitting="">
+                    다양한 브랜드와 플랫폼을 바탕으로 구성된 클론 프로젝트 모음입니다.
+                  </p>
+                  <!-- <div class="btnGroup">
+                    <button class="btn1 en" target="_blank">Design plan</button>
+                    <button class="btn2 en" target="_blank">Launch Site</button>
+                    </div> -->
+                </div>
+            
+                <div class="kbrand-scrollBox">
+                  <div class="kbrand-center">
+                    <div class="kbrand-items">
+                      <!-- 8개 카드 예시 -->
+                      <div class="kbrand-item">
+                        <div class="kbrand-card">
+                          <img src="img/HLL.png" alt="Slide 1" />
+                          <div class="kbrand-desc">이 카드는 1번째 이미지입니다.</div>
+                        </div>
+                      </div>
+                      <div class="kbrand-item">
+                        <div class="kbrand-card">
+                          <img src="img/HLL.png" alt="Slide 2" />
+                          <div class="kbrand-desc">이 카드는 2번째 이미지입니다.</div>
+                        </div>
+                      </div>
+                      <div class="kbrand-item">
+                        <div class="kbrand-card">
+                          <img src="img/daebang.png" alt="Slide 3" />
+                          <div class="kbrand-desc">이 카드는 3번째 이미지입니다.</div>
+                        </div>
+                      </div>
+                      <div class="kbrand-item">
+                        <div class="kbrand-card">
+                          <img src="img/뮤자인.png" alt="Slide 4" />
+                          <div class="kbrand-desc">이 카드는 4번째 이미지입니다.</div>
+                        </div>
+                      </div>
+                      <div class="kbrand-item">
+                        <div class="kbrand-card">
+                          <img src="img/crewalamode.png" alt="Slide 5" />
+                          <div class="kbrand-desc">이 카드는 5번째 이미지입니다.</div>
+                        </div>
+                      </div>
+                      <div class="kbrand-item">
+                        <div class="kbrand-card">
+                          <img src="img/HLL.png" alt="Slide 6" />
+                          <div class="kbrand-desc">이 카드는 6번째 이미지입니다.</div>
+                        </div>
+                      </div>
+                      <div class="kbrand-item">
+                        <div class="kbrand-card">
+                          <img src="img/HLL.png" alt="Slide 7" />
+                          <div class="kbrand-desc">이 카드는 7번째 이미지입니다.</div>
+                        </div>
+                      </div>
+                      <div class="kbrand-item">
+                        <div class="kbrand-card">
+                          <img src="img/HLL.png" alt="Slide 8" />
+                          <div class="kbrand-desc">이 카드는 8번째 이미지입니다.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+        
+
+            <section class="section process">
                 <div class="inner">
                     <div class="textBox">
                         <span class="en">Portfolio</span>

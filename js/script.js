@@ -41,32 +41,51 @@ $(function(){
 // visual 애니메이션
 $(window).on('load', function () {
   gsap.registerPlugin(ScrollTrigger);
-  const tl = gsap.timeline({ delay: 0.2 });
+  const tl = gsap.timeline({ delay: 0 });
 
   tl.fromTo('.visual', {background:'#ffffff'},{
     duration: 1,
     y: 0,
     opacity: 1,
     ease: 'power3.out',
-    background:'#0d0d0d'
+    background:'#0d0d0d',
 });
 
-  tl.set('.visual .innerVisual', { visibility: 'visible' }, "-=1.0");
+  tl.set('.visual .innerVisual', { visibility: 'visible' }, "-=1.2");
 
   tl.to('.visual', {
     duration: 1.8,
     opacity: 1,
     ease: 'power2.out',
-    scale: 1
+
 }, 0);
 
 
 tl.fromTo('.visual .innerVisual .top', {y: 100},{ duration: 1, opacity: 1, y: 0, ease: 'none' }, 0);
-tl.fromTo('.visual .innerVisual .middle',{y: 100}, { opacity: 1, y: 0, ease: 'none' ,duration: 1}, "-=1");
-tl.fromTo('.visual .innerVisual .bottom',{y: 100}, {opacity: 1, y: 0, ease: 'none' ,duration: 1}, "-=0.5");
+tl.fromTo('.visual .innerVisual .middle',{y: 100}, { opacity: 1, y: 0, ease: 'none' ,duration: 1}, "-=1.3");
+tl.fromTo('.visual .innerVisual .bottom',{y: 100}, {opacity: 1, y: 0, ease: 'none' ,duration: 1}, "-=0.8");
 
+  // 각 문자 span.char를 찾아서 timeline에 stagger로 애니메이션 추가
+  const chars = document.querySelectorAll('.visual .en1 .char');
 
+const tl2 = gsap.timeline();
 
+tl2.from(chars, {
+  opacity: 0,
+  y: 40,
+  scale: 0.5,
+  rotationX: -90,
+  transformOrigin: "center center -50",
+  ease: "back.out(1.7)",
+  duration: 0.6,
+  stagger: 0.05,
+})
+.to(chars, {
+  ease: "power2.out",
+  duration: 0.3,
+  stagger: 0.05,
+}, "-=0.5");
+  
   // 배경 스케일 효과
   gsap.to('.visual', {
       scale: 1.4,
@@ -98,7 +117,7 @@ $(function(){
         .to('.visual .bottom',{xPercent:'300',ease:'none',duration:5},0)
 
 
-    // banner효과
+
 
 
     // archive 사진 갈라지는 효과
@@ -117,7 +136,7 @@ $(function(){
     .to('.archive .inner .imgBox .img04',{x: '350',y:'50',rotate: '15',ease:'none',duration:4},0)
     .to('.archive .inner .imgBox .img05',{x: '-200',y:'-50',rotate: '-20',ease:'none',duration:4},0)
     .to('.archive .inner .imgBox .img06',{x: '200',y:'-50',rotate: '20',ease:'none',duration:4},0)
-    .to('.archive .inner .text',{opacity:1,duration:1,ease:'none'},"-=2.4")
+    // .to('.archive .inner .text',{opacity:1,duration:1,ease:'none'},"-=2.4")
 
 
 
@@ -237,7 +256,7 @@ const track = document.querySelector('.track');
 track.innerHTML += track.innerHTML;
 
 // 애니메이션 속도 설정
-let speed = 40; // 커질수록 느림
+let speed = 20; // 커질수록 느림
 
 // 기본 무한 슬라이드 애니메이션
 const marquee = gsap.to(track, {
@@ -248,46 +267,32 @@ const marquee = gsap.to(track, {
 });
 
 // 스크롤 시 애니메이션 속도 조절
-let timeout;
-window.addEventListener("scroll", () => {
-  marquee.timeScale(2.5); // 2배 속도
+// let timeout;
+// window.addEventListener("scroll", () => {
+//   marquee.timeScale(2.5); // 2배 속도
 
-  clearTimeout(timeout);
-  timeout = setTimeout(() => {
-    marquee.timeScale(1); // 다시 원래 속도
-  }, 400); // 0.4초 후 복원
-});
+//   clearTimeout(timeout);
+//   timeout = setTimeout(() => {
+//     marquee.timeScale(1); // 다시 원래 속도
+//   }, 400); // 0.4초 후 복원
+// });
 
 
-// worklist 글자확대
+
+// worklist 배경색만 자연스럽게 바꾸기
 gsap.timeline({
   scrollTrigger: {
     trigger: '.workList',
     start: 'top top',
-    end: '+=400', // ⬅ 좀 더 길게 (자연스럽게 확대되게)
+    end: 'bottom top',  // 섹션 끝날 때까지
     scrub: 1,
-    pin:true
-    // markers: true,
+    // pin: true, // pin이 꼭 필요 없으면 빼도 돼
   }
 })
-.fromTo(".list",
-  {
-    scale: 1,
-    opacity: 1,
-  },
-  {
-    scale: 50, // 너무 부담스럽지 않게 기존 100 → 50 정도로 축소
-    opacity: 0, // 서서히 사라지게
-    ease: 'power2.inOut',
-    duration: 1,
-  }, 0
-)
 .to('.workList', {
-  background: '#f9f9f6',
-  duration: 1,
-  ease: 'power2.out'
-}, "-=0.8"); // 배경 전환은 약간 겹치게
-
+  opacity:0.1,
+  ease: 'power2.out',
+});
 // 섹션겹치는효과
 // 섹션 겹치는 효과 수정 (kbrand pin 안 함)
 gsap.utils.toArray('.section').forEach((section) => { {
@@ -507,7 +512,7 @@ const init = () => {
     }, 0.15 * (total / 2 - 1) + 1);
 
     timeline.to(image, {
-      transformOrigin: "center 100vh",
+      transformOrigin: "center 120vh",
       rotation: index > total / 2 ? -degree * (total - index) : rotationAngle,
       duration: 1,
       ease: "power1.out",
@@ -581,21 +586,38 @@ document.querySelectorAll('.contact a').forEach(link => {
 });
 
 
-// clon swiper
-document.addEventListener("DOMContentLoaded", function () {
-  const launchBtn = document.querySelector(".launch-btn");
-  const descEl = document.querySelector(".section-desc");
 
-  const links = [
-    "https://example.com/link1",
-    "https://example.com/link2",
-    "https://example.com/link3",
-    "https://example.com/link4",
-    "https://example.com/link5",
-    "https://example.com/link6",
+
+gsap.registerPlugin(ScrollTrigger);
+
+ScrollTrigger.create({
+  trigger: ".kbrand",
+  start: "top top",
+  end: "+=100%", // 섹션4가 고정되는 거리 (스크롤 한 번 더 해야 넘어감)
+  pin: true,
+  scrub: true, // 자연스럽게
+  // markers: true
+});
+// gsap.to(".kbrand", {
+//   scrollTrigger: {
+//     trigger: ".kbrand",
+//     start: "top top",
+//     end: "+=100%",
+//     scrub: true,
+//   },
+//   backgroundColor: "#0d0d0d"
+// });
+document.addEventListener("DOMContentLoaded", function () {
+  const fandomDescEl = document.querySelector(".fandom-desc");
+  const clonDescEl = document.querySelector(".clon-desc");
+  const subwayDescEl = document.querySelector(".subway-desc");
+
+  const fandomDescriptions = [
+    "설명 1: 첫번째 이미지에 대한 설명입니다.",
+    "설명 2: 두번째 이미지에 대한 설명입니다.",
   ];
 
-  const descriptions = [
+  const clonDescriptions = [
     "설명 1: 첫번째 이미지에 대한 설명입니다.",
     "설명 2: 두번째 이미지에 대한 설명입니다.",
     "설명 3: 세번째 이미지에 대한 설명입니다.",
@@ -604,106 +626,86 @@ document.addEventListener("DOMContentLoaded", function () {
     "설명 6: 여섯번째 이미지에 대한 설명입니다.",
   ];
 
-  let swiper;
+  const subwayDescriptions = [
+    "사용자의 주문 흐름을 개선한 UX/UI 리디자인 프로젝트 - Role: UX Research · Wireframe · UI Design · Prototype",
+    "설명 2: 두번째 이미지에 대한 설명입니다.",
+  ];
 
-  function initSwiperWithEffect(effectName) {
-    if (swiper) swiper.destroy(true, true); // 기존 swiper 초기화
+  // fade + translateX + scale 커스텀 효과
+  const customEffect = {
+    on: {
+      progress: function () {
+        for (let i = 0; i < this.slides.length; i++) {
+          const slide = this.slides[i];
+          const progress = slide.progress;
 
-    let effectOptions = {};
+          const translateX = progress * 50; // 좌우 50px 이동 (진행 방향에 따라)
+          const scale = 1 - Math.min(Math.abs(progress * 0.2), 0.2); // 최대 0.8~1 사이 스케일
+          const opacity = 1 - Math.min(Math.abs(progress), 1); // 투명도 조절
 
-    switch (effectName) {
-      case "fade":
-        effectOptions = {
-          effect: "fade",
-          fadeEffect: { crossFade: true },
-        };
-        break;
-      case "cube":
-        effectOptions = {
-          effect: "cube",
-          cubeEffect: {
-            shadow: true,
-            slideShadows: true,
-            shadowOffset: 20,
-            shadowScale: 0.9,
-          },
-          
-        };
-        break;
-      case "coverflow":
-        effectOptions = {
-          effect: "coverflow",
-          coverflowEffect: {
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: true,
-          },
-        };
-        break;
-      case "flip":
-        effectOptions = {
-          effect: "flip",
-          flipEffect: {
-            slideShadows: true,
-            limitRotation: true,
-          },
-        };
-        break;
-      default:
-        effectOptions = {}; // 기본 효과 (slide)
-    }
-
-    swiper = new Swiper(".clon-swiper", {
-      loop: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
+          slide.style.transform = `translateX(${translateX}px) scale(${scale})`;
+          slide.style.opacity = opacity;
+          slide.style.zIndex = -Math.abs(Math.round(progress)) + this.slides.length;
+        }
       },
-      autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
+      setTransition: function (duration) {
+        for (let i = 0; i < this.slides.length; i++) {
+          this.slides[i].style.transitionDuration = duration + "ms";
+        }
       },
-      ...effectOptions,
-      on: {
-        init: function () {
-          if (launchBtn) {
-            launchBtn.href = links[this.realIndex];
-            launchBtn.target = "_blank"; // ✅ 새 탭에서 열기
-          }
-          if (descEl) descEl.textContent = descriptions[this.realIndex];
-        },
-        slideChange: function () {
-          if (launchBtn) {
-            launchBtn.href = links[this.realIndex];
-            launchBtn.target = "_blank"; // ✅ 새 탭에서 열기
-          }
-          if (descEl) descEl.textContent = descriptions[this.realIndex];
-        },
-      }
-    });
+    },
+  };
 
-    // 슬라이드 호버 시 설명 변경
-    const slides = document.querySelectorAll(".clon-swiper .swiper-slide");
-    slides.forEach((slide, index) => {
-      slide.addEventListener("mouseenter", () => {
-        if (descEl) descEl.textContent = descriptions[index % descriptions.length];
-        if (launchBtn) launchBtn.href = links[index % links.length];
-        
-      });
-      slide.addEventListener("mouseleave", () => {
-        const idx = swiper.realIndex;
-        if (descEl) descEl.textContent = descriptions[idx];
-        if (launchBtn) launchBtn.href = links[idx];
-      });
-    });
-  }
+  const fandomSwiper = new Swiper(".fandomSwiper", {
+    loop: true,
+    autoplay: { delay: 4000, disableOnInteraction: false },
+    pagination: { el: ".fandomSwiper .swiper-pagination", clickable: true },
+    on: {
+      init: function () {
+        if (fandomDescEl) fandomDescEl.textContent = fandomDescriptions[this.realIndex % fandomDescriptions.length];
+      },
+      slideChange: function () {
+        if (fandomDescEl) fandomDescEl.textContent = fandomDescriptions[this.realIndex % fandomDescriptions.length];
+      },
+      progress: customEffect.on.progress,
+      setTransition: customEffect.on.setTransition,
+    },
+  });
 
-  // 초기화 시 원하는 효과 이름 넣으면 됨: 'fade', 'cube', 'coverflow', 'flip', ''(기본)
-  // initSwiperWithEffect("fade");
-  initSwiperWithEffect("cube");
-  // initSwiperWithEffect("coverflow");
-  // initSwiperWithEffect("flip");
+  const clonSwiper = new Swiper(".clon-swiper", {
+    loop: true,
+    effect: "cube",
+    cubeEffect: {
+      shadow: true,
+      slideShadows: true,
+      shadowOffset: 20,
+      shadowScale: 0.9,
+    },
+    pagination: { el: ".clon-swiper .swiper-pagination", clickable: true },
+    autoplay: { delay: 4000, disableOnInteraction: false },
+    on: {
+      init: function () {
+        if (clonDescEl) clonDescEl.textContent = clonDescriptions[this.realIndex];
+      },
+      slideChange: function () {
+        if (clonDescEl) clonDescEl.textContent = clonDescriptions[this.realIndex];
+      },
+    },
+  });
+
+  const subwaySwiper = new Swiper(".subwaySwiper", {
+    loop: true,
+    autoplay: { delay: 4000, disableOnInteraction: false },
+    pagination: { el: ".subwaySwiper .swiper-pagination", clickable: true },
+    on: {
+      init: function () {
+        if (subwayDescEl) subwayDescEl.textContent = subwayDescriptions[this.realIndex % subwayDescriptions.length];
+      },
+      slideChange: function () {
+        if (subwayDescEl) subwayDescEl.textContent = subwayDescriptions[this.realIndex % subwayDescriptions.length];
+      },
+      progress: customEffect.on.progress,
+      setTransition: customEffect.on.setTransition,
+    },
+  });
 });
-
