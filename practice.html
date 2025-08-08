@@ -1,21 +1,72 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <title>이메일 버튼 예제</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Get in Touch 팝업 예제</title>
+<style>
+  body {
+    background: #0d0d0d;
+    color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 100px 20px;
+  }
+  a#getInTouchBtn {
+    display: inline-block;
+    background: #b1dd40;
+    color: #0d0d0d;
+    font-weight: bold;
+    padding: 15px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  a#getInTouchBtn:hover {
+    background: #9ec736;
+  }
+</style>
 </head>
 <body>
 
-  <button id="showEmailBtn">이메일 보기</button>
-  <p id="emailDisplay" style="margin-top:20px; font-weight: bold;"></p>
+<section class="start" id="contact">
+  <div class="inner">
+    <div class="topText">
+      <p class="name en">HYERI
+        <span class="icon"><img src="https://via.placeholder.com/30" alt="" width="30px"></span>
+        <span class="job en"> Web UX/UI Designer</span>
+      </p>
+    </div>
+    <div class="textBox">start a project now</div>
+    <div class="bottomText">
+      <p>
+        포트폴리오를 끝까지 봐주셔서 감사합니다. <br>이 여정은 저의 디자인 성장 과정이자, 더 나은 사용자 경험을 향한 고민의 기록입니다. <br>함께 고민하고, 함께 성장하는 디자이너가 되겠습니다.
+      </p>
+      <div class="button">
+        <a href="#" id="getInTouchBtn">GET IN TOUCH</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <script>
-    const email = 'your.email@example.com'; // 여기 이메일 주소를 네 것으로 바꿔
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const email = 'yhr7656@naver.com'; // 본인 이메일로 변경
+  const subject = encodeURIComponent('프로젝트 문의드립니다');
+  const body = encodeURIComponent('안녕하세요,\n함께 작업할 기회를 갖고 싶습니다.');
 
-    document.getElementById('showEmailBtn').addEventListener('click', () => {
-      document.getElementById('emailDisplay').textContent = email;
-    });
-  </script>
+  document.getElementById('getInTouchBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
+    window.open(
+      gmailUrl,
+      'gmailPopup',
+      'width=600,height=600,top=100,left=100,resizable=yes,scrollbars=yes'
+    );
+  });
+});
+</script>
 
 </body>
 </html>

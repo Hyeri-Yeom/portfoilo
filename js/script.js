@@ -366,28 +366,61 @@ gsap.timeline({
 
 
 
-
-
-
-
-// 반응형 디바이스이미지 세로스크롤
 gsap.registerPlugin(ScrollTrigger);
 
-let upBox = document.querySelectorAll('.mockup .slide');
+const slides = document.querySelectorAll('.mockup .slide');
 
-let tl = gsap.timeline({
+const tl = gsap.timeline({
   scrollTrigger: {
     trigger: '.mockup',
     pin: true,
-    scrub: 1,
+    scrub: 0.4,
     start: 'top top',
-    end: '+=500%',
-    // markers: true
+    end: '+=400%',
+    markers: true
   }
 });
 
+// 초기 상태 설정
+slides.forEach(slide => {
+  gsap.set(slide, { autoAlpha: 0, y: 100 });
+});
 
+slides.forEach((slide, i) => {
+  const enterTime = i * 2;
+  const exitTime = enterTime + 1.2;
 
+  tl.to(slide, {
+    autoAlpha: 1,
+    y: 0,
+    duration: 1.2,
+    ease: 'power3.out',
+    onStart: () => {
+      // Splitting 적용
+      slide.querySelectorAll('[data-splitting]').forEach(el => {
+        if (!el.classList.contains('splitting')) {
+          Splitting({ target: el });
+        }
+      });
+      // .motion 클래스 강제 추가 (애니메이션 트리거용)
+      slide.querySelectorAll('.textBox').forEach(tb => {
+        tb.classList.add('motion');
+      });
+    },
+    onReverseComplete: () => {
+      // 슬라이드 사라질 때 .motion 클래스 제거 (애니메이션 초기화용)
+      slide.querySelectorAll('.textBox').forEach(tb => {
+        tb.classList.remove('motion');
+      });
+    }
+  }, enterTime)
+  .to(slide, {
+    autoAlpha: 0,
+    y: -80,
+    duration: 1.2,
+    ease: 'power2.inOut',
+  }, exitTime);
+});
 // from → to 로 자연스러운 애니메이션
 tl.from(upBox, {
   y: '140%',
@@ -403,23 +436,19 @@ tl.to(upBox, {
   stagger: 0.5
 });
 
-//디자인컨셉 아이콘 회전효과
-
 
 gsap.timeline({
-    scrollTrigger: {
-      trigger: '.start',
-      start: '80% 50%',
-      end: '+=600',
-      scrub: 3,
-      // markers: true,
-    }
-  })
-  .to('footer .inner .textBox .icon', {
-    rotate: 230, 
-    duration: 10,
-    ease: 'none'
-  });
+  scrollTrigger: {
+    trigger: '.start',
+    start: 'top bottom',  // 트리거 top이 뷰포트 bottom에 닿을 때
+    end: 'bottom top',    // 트리거 bottom이 뷰포트 top에 닿을 때
+    scrub: 2,
+  }
+})
+.to('footer .inner .textBox .icon', {
+  rotate: 260,
+  ease: 'none',
+});
 
 
 //디자인컨셉 아이콘 회전효과
@@ -586,7 +615,18 @@ document.querySelectorAll('.contact a').forEach(link => {
 });
 
 
-
+document.querySelectorAll('.Resume a').forEach(link => {
+  const text = link.textContent;
+  link.textContent = '';
+  text.split('').forEach((char, i) => {
+    const span = document.createElement('span');
+    span.classList.add('char');  // 여기도 추가
+    span.textContent = char;
+    span.style.setProperty('--i', i);
+    span.style.display = 'inline-block';
+    link.appendChild(span);
+  });
+});
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -707,5 +747,31 @@ document.addEventListener("DOMContentLoaded", function () {
       progress: customEffect.on.progress,
       setTransition: customEffect.on.setTransition,
     },
+  });
+});
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('getInTouchBtn');
+  if (!btn) {
+    console.error('버튼을 찾지 못했습니다.');
+    return;
+  }
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log('버튼 클릭됨'); // 클릭 인식 확인용 로그
+
+    // Gmail 링크
+    const email = 'yhr7656@naver.com';
+    const subject = encodeURIComponent('프로젝트 문의드립니다');
+    const body = encodeURIComponent('안녕하세요,\n함께 작업할 기회를 갖고 싶습니다.');
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
+
+    window.open(
+      gmailUrl,
+      'gmailPopup',
+      'width=600,height=600,top=100,left=100,resizable=yes,scrollbars=yes'
+    );
   });
 });
