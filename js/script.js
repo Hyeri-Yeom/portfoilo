@@ -377,7 +377,7 @@ const tl = gsap.timeline({
     scrub: 0.4,
     start: 'top top',
     end: '+=400%',
-    markers: true
+    // markers: true
   }
 });
 
