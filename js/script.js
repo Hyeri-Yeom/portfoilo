@@ -653,35 +653,97 @@ document.addEventListener("DOMContentLoaded", function () {
   const subwayDescEl = document.querySelector(".subway-desc");
 
   const fandomDescriptions = [
-    "설명 1: 첫번째 이미지에 대한 설명입니다.",
-    "설명 2: 두번째 이미지에 대한 설명입니다.",
+`<p style="margin-bottom:12px; font-weight:normal;">
+  <strong>몰입감 있는 팬덤 플랫폼을 구현한 프로젝트</strong>로,<br> 
+  아티스트별 맞춤 공간과 커뮤니티 기능을 통해 <br> 팬과 아티스트 간의 연결을 강화합니다.
+</p>
+<p style="font-size:14px; color:#666;">Period: 25.07.01 - 25.07.31</p>
+<p style="font-size:14px; color:#666;">Role: UX Research · Wireframe · UI Design · <br>Prototype · Frontend Development · Git 관리 · 배포</p>`,
+  ` <p style="font-weight:600;margin-bottom:12px">챗봇 UI 디자인 및 인터랙션 구현</p>
+    <p style="font-weight:normal;">
+    사용자의 접근성과 브랜드 톤을 반영한 챗봇 UI를 디자인하고,<br>
+    버튼 클릭 시 자동 응답이 출력되는 JS 인터랙션을 구현했습니다.</p>`,
+    `<p style="font-weight:600;margin-bottom:12px">아티스트 페이지 인터랙션 구현</p>
+<p style="font-weight:normal;">
+아티스트 프로필을 누르면 상세 페이지로 자연스럽게 전환되도록 구성했고,<br>
+게시물은 재사용 가능한 컴포넌트로 제작해 유지 보수를 고려했습니다.
+</p>`,
+`  <p style="font-weight:600;margin-bottom:12px">미디어 페이지 UI 디자인</p>
+<p style="font-weight:normal;">
+카테고리 구분과 버튼 인터페이스를 통해<br>
+사용자의 흐름과 접근성을 고려했습니다.
+</p>
+`,
+`<p style="font-weight:600;margin-bottom:12px">아카이브 페이지 기능 구현</p>
+<p style="font-weight:normal;">
+탭 메뉴를 통해 활동 기록을 카테고리별로 나누고,<br>
+더보기 버튼을 통한 삭제 흐름을 구현해봤습니다.
+</p>`,
+`<p style="font-weight:600;margin-bottom:12px">라이브 페이지 기능 구현</p>
+<p style="font-weight:normal;">
+탭 메뉴를 통해 활동 기록을 카테고리별로 나누고,<br>
+더보기 버튼을 통한 삭제 흐름을 구현해봤습니다.
+</p>`,
+`<p style="font-weight:600;margin-bottom:12px">라이브 페이지 UI 코딩</p>
+<p style="font-weight:normal;">
+라이브 방송 UI를 코딩으로 구현했으며,<br>
+아티스트별 라이브 리스트와 재생 화면을 구성했습니다.
+</p>`
   ];
 
   const clonDescriptions = [
-    "설명 1: 첫번째 이미지에 대한 설명입니다.",
-    "설명 2: 두번째 이미지에 대한 설명입니다.",
-    "설명 3: 세번째 이미지에 대한 설명입니다.",
-    "설명 4: 네번째 이미지에 대한 설명입니다.",
-    "설명 5: 다섯번째 이미지에 대한 설명입니다.",
-    "설명 6: 여섯번째 이미지에 대한 설명입니다.",
+    `<p style="margin-bottom:12px; font-weight:normal;">브랜드 가치와 스토리를 반영한 핵심 정보를 효율적으로 배치하고, <br>  사용자 중심의 경험 강화를 목표로 진행한 
+리뉴얼 프로젝트입니다.</p>
+    <p style="font-size:14px; color:#888;">Period: 25.06.04 - 25.06.30 </p>
+    <p style="font-size:14px; color:#888;">Role: UX Research · Frontend Development · Responsive Design</p>`,
+    `<p style="font-weight:600;margin-bottom:12px">Intro Section</p>
+    <p style="font-weight:normal;">브랜드 감성을 즉각 전달하기 위해 비주얼 중심의 레이아웃으로 구성하였으며,<br>텍스트 애니메이션으로 시각적인 흥미를 더했습니다.</p>` ,
+    `<p style="font-weight:600;margin-bottom:12px">Slide‑Up Section</p>
+    <p style="font-weight:normal;">‘몰입감 있는 흐름’을 연출하기 위해<br>GSAP 기반 슬라이드업 애니메이션을 구현했습니다.</p>`,
+    `<p style="font-weight:600;margin-bottom:12px">Image Overlay Section</p>
+    <p style="font-weight:normal;">GSAP을 활용해 이미지 위에 텍스트를 오버레이하며<br>
+    깊이감 있는 시각 효과를 구현했습니다.</p>`,
+    `<p style="font-weight:600;margin-bottom:12px">Store Page</p>
+    <p style="font-weight:normal;">Swiper를 활용하여 외부 슬라이드로 매장을 선택하고, <br>
+    내부 슬라이드로 해당 매장의 상세 이미지를 탐색할 수 있게 구현했습니다.</p>`,
   ];
 
   const subwayDescriptions = [
-    "사용자의 주문 흐름을 개선한 UX/UI 리디자인 프로젝트 - Role: UX Research · Wireframe · UI Design · Prototype",
-    "설명 2: 두번째 이미지에 대한 설명입니다.",
+    `<p style="margin-bottom:12px; font-weight:normal">
+      사용자 흐름 분석과 UX 리서치를 바탕으로, <br>브랜드 아이덴티티를 반영한 직관적이고 효율적인 UI를 설계한 <br>리디자인 프로젝트입니다.
+    </p>
+    <p style="font-size:14px; color:#666;">Period: 2025.03.06 – 2025.03.19</p>
+    <p style="font-size:14px; color:#666;">Role: UX Research · Persona & Problem Definition <br>· Wireframe · UI Design · Prototype</p>`,
+"기존에 없던 <strong>즐겨찾기 기능</strong>을 통해 <br>자주 주문하는 메뉴를 손쉽게 저장하고 접근할 수 있도록 구성했습니다.",
+"자주 먹는 메뉴를 <strong>'나만의 메뉴'</strong>로 저장해<br>매번 옵션 선택 없이 빠르게 주문할 수 있게 했고,<br>‘바로 주문’ 버튼으로 사용 편의성을 높였습니다."
   ];
 
-  // fade + translateX + scale 커스텀 효과
-  const customEffect = {
+  // 설명 업데이트 함수 (innerHTML로 넣음)
+  function updateDescription(el, descriptions, index) {
+    if (!el) return;
+    el.innerHTML = descriptions[index % descriptions.length];
+  }
+
+  // 기존 swiper 초기화와 이벤트에서 설명 업데이트만 수정
+  const fandomSwiper = new Swiper(".fandomSwiper", {
+    loop: true,
+    autoplay: { delay: 8000, disableOnInteraction: false },
+    pagination: { el: ".fandomSwiper .swiper-pagination", clickable: true },
     on: {
+      init: function () {
+        updateDescription(fandomDescEl, fandomDescriptions, this.realIndex);
+      },
+      slideChange: function () {
+        updateDescription(fandomDescEl, fandomDescriptions, this.realIndex);
+      },
       progress: function () {
         for (let i = 0; i < this.slides.length; i++) {
           const slide = this.slides[i];
           const progress = slide.progress;
 
-          const translateX = progress * 50; // 좌우 50px 이동 (진행 방향에 따라)
-          const scale = 1 - Math.min(Math.abs(progress * 0.2), 0.2); // 최대 0.8~1 사이 스케일
-          const opacity = 1 - Math.min(Math.abs(progress), 1); // 투명도 조절
+          const translateX = progress * 50;
+          const scale = 1 - Math.min(Math.abs(progress * 0.2), 0.2);
+          const opacity = 1 - Math.min(Math.abs(progress), 1);
 
           slide.style.transform = `translateX(${translateX}px) scale(${scale})`;
           slide.style.opacity = opacity;
@@ -693,22 +755,6 @@ document.addEventListener("DOMContentLoaded", function () {
           this.slides[i].style.transitionDuration = duration + "ms";
         }
       },
-    },
-  };
-
-  const fandomSwiper = new Swiper(".fandomSwiper", {
-    loop: true,
-    autoplay: { delay: 4000, disableOnInteraction: false },
-    pagination: { el: ".fandomSwiper .swiper-pagination", clickable: true },
-    on: {
-      init: function () {
-        if (fandomDescEl) fandomDescEl.textContent = fandomDescriptions[this.realIndex % fandomDescriptions.length];
-      },
-      slideChange: function () {
-        if (fandomDescEl) fandomDescEl.textContent = fandomDescriptions[this.realIndex % fandomDescriptions.length];
-      },
-      progress: customEffect.on.progress,
-      setTransition: customEffect.on.setTransition,
     },
   });
 
@@ -725,10 +771,10 @@ document.addEventListener("DOMContentLoaded", function () {
     autoplay: { delay: 4000, disableOnInteraction: false },
     on: {
       init: function () {
-        if (clonDescEl) clonDescEl.textContent = clonDescriptions[this.realIndex];
+        updateDescription(clonDescEl, clonDescriptions, this.realIndex);
       },
       slideChange: function () {
-        if (clonDescEl) clonDescEl.textContent = clonDescriptions[this.realIndex];
+        updateDescription(clonDescEl, clonDescriptions, this.realIndex);
       },
     },
   });
@@ -739,16 +785,34 @@ document.addEventListener("DOMContentLoaded", function () {
     pagination: { el: ".subwaySwiper .swiper-pagination", clickable: true },
     on: {
       init: function () {
-        if (subwayDescEl) subwayDescEl.textContent = subwayDescriptions[this.realIndex % subwayDescriptions.length];
+        updateDescription(subwayDescEl, subwayDescriptions, this.realIndex);
       },
       slideChange: function () {
-        if (subwayDescEl) subwayDescEl.textContent = subwayDescriptions[this.realIndex % subwayDescriptions.length];
+        updateDescription(subwayDescEl, subwayDescriptions, this.realIndex);
       },
-      progress: customEffect.on.progress,
-      setTransition: customEffect.on.setTransition,
+      progress: function () {
+        for (let i = 0; i < this.slides.length; i++) {
+          const slide = this.slides[i];
+          const progress = slide.progress;
+
+          const translateX = progress * 50;
+          const scale = 1 - Math.min(Math.abs(progress * 0.2), 0.2);
+          const opacity = 1 - Math.min(Math.abs(progress), 1);
+
+          slide.style.transform = `translateX(${translateX}px) scale(${scale})`;
+          slide.style.opacity = opacity;
+          slide.style.zIndex = -Math.abs(Math.round(progress)) + this.slides.length;
+        }
+      },
+      setTransition: function (duration) {
+        for (let i = 0; i < this.slides.length; i++) {
+          this.slides[i].style.transitionDuration = duration + "ms";
+        }
+      },
     },
   });
 });
+
 
 
 

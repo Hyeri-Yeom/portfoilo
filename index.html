@@ -12,8 +12,6 @@
     <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Great+Vibes&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Prata&display=swap" rel="stylesheet">
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="https://assets.codepen.io/16327/SplitText3.min.js"></script>
     <script src="js/scrolla.jquery.min.js"></script>
@@ -69,8 +67,8 @@
 
             <section class="about" id="about-me">
                 <div class="inner animate" data-animate = "motion">
-                <h2 class="title en1" data-splitting>About me? Let me explain</h2>
-                <p class="hiddenimg"><img src="img/aboutimg.png" alt=""></p>
+                <h2 class="title en" data-splitting style="font-weight: 500;">About me? <span class="en1">Let me explain.</span></h2>
+                <p class="hiddenimg"><img src="img/aboutimg.jpg" alt=""></p>
                 </div>
             </section>
 
@@ -86,7 +84,7 @@
                                 <div class="line 1">
                                     <p class="prof">Profile</p>
                                     <p class="content">
-                                        <p>염혜리</p>
+                                        <p>염혜리 | UI/UX Designer </p>
                                         <p>2002.11.04</p>
                                         <p>24.02 한양여자대학교 실무영어과 졸업</p>
                                     </p>
@@ -96,13 +94,14 @@
                                     <p class="content">
                                         <p>컴퓨터활용능력 2급</p>
                                         <p>GTQ 1급</p>
-                                        <p>SCA Intermate</p>
+                                        <p>SCA foundation</p>
                                     </p>
                                 </div>
                                 <div class="line 3">
                                     <p class="prof">Skill</p>
                                     <p class="content">
-                                        일단모르겠음
+                                      Figma / Photoshop / Illustrator <br>
+                                       HTML / CSS / JS 
                                     </p>
                                 </div>
                             </div>
@@ -149,9 +148,10 @@
             <section class="archive">
                 <div class="inner">
                     <div class="text animate" data-animate="motion" data-splitting>
-                        <h2 class="en">CONNECT</h2>
-                        <p>새로운 환경에 적응하고, 예기치 않은 변수에
-                            <br>열린 마음으로 대처하면서 <br>‘공감’과 ‘유연한 사고’는 저의 중요한 자산이 되었습니다.</p>
+                        <h2 class="en">Every Journey <br>Shapes My <span class="en1">Vision</span></h2>
+다양한 경험과 취미가 모여 저만의 시선을 만들었습니다.
+
+                        </p>
                     </div>
                     <div class="imgBox">
                         <div class="img img01"><img src="img/img1.jpg" alt=""></div>
@@ -173,13 +173,13 @@
                         <p>VS Code</p>
                       </div>
                       <div class="icon"><img src="img/illust.png" width="80px"><p>Illustration</p></div>
-                      <div class="icon"><img src="img/js_color.png" width="80px"><p>GSAP</p></div>
+                      <div class="icon"><img src="img/gsap.png" width="80px"><p>GSAP</p></div>
                       <div class="icon"><img src="img/figma_color.png" width="80px"><p>Figma</p></div>
                       <div class="icon"><img src="img/css.png" width="80px"><p>CSS</p></div>
                       <div class="icon"><img src="img/photoshop-color.png" width="80px"><p>Photoshop</p></div>
                       <div class="icon"><img src="img/js_color.png" width="80px"><p>Javascript</p></div>
-                      <div class="icon"><img src="img/js_color.png" width="80px"><p>MidJourney</p></div>
-                      <div class="icon"><img src="img/js_color.png" width="80px"><p>Open AI</p></div>
+                      <div class="icon"><img src="img/midjourney.png" width="80px"><p>MidJourney</p></div>
+                      <div class="icon"><img src="img/chat.png" width="80px"><p>Open AI</p></div>
                     </div>
                   </div>
                 </div>
@@ -189,14 +189,14 @@
                     <h1 class="list en" data-splitting>WORK LIST</h1>
                 </div>
             </section>
-            <section class="section clon">
+        <section class="section clon">
                 <div class="inner">
-                <div class="left">
+                <div class="left animate" data-animate="motion">
                     <p class="section-number">01. Team project </p>
-                    <h2 class="section-title en1">TAMBURINS <br> <span class="en">Renewal Project</span></h2>
+                    <h2 class="section-title en1"  data-splitting>TAMBURINS <br> <span class="en">Renewal Project</span></h2>
                     <div class="btnGroup">
                         <a href="https://design-plan-link.com" target="_blank" class="btn1">Design plan</a>
-                        <a href="https://launch-site-link.com" target="_blank" class="btn2">Launch Site</a>
+                        <a href="https://tamburins.vercel.app/" target="_blank" class="btn2">Launch Site</a>
                       </div>
                     <p class="clon-desc">
                       실제 사이트를 그대로 구현하며 구조, 스타일링, 인터렉션<br />
@@ -209,11 +209,10 @@
                   <div class="swiper clon-swiper">
                     <div class="swiper-wrapper">
                       <div class="swiper-slide"><img src="img/tam_1.png" alt="Image 1" /></div>
-                      <div class="swiper-slide a"><img src="img/tam_video1.gif" alt="Image 2" /></div>
-                      <div class="swiper-slide"><img src="img/tam_3.png" alt="Image 3" /></div>
-                      <div class="swiper-slide"><img src="img/tam_4.png" alt="Image 4" /></div>
-                      <div class="swiper-slide"><img src="img/tam_5.png" alt="Image 5" /></div>
-                      <div class="swiper-slide"><img src="img/tam_1.png" alt="Image 6" /></div>
+                      <div class="swiper-slide"><img src="img/tam2.png" alt="Image 3" /></div>
+                      <div class="swiper-slide"><img src="img/tam3.png" alt="Image 4" /></div>
+                      <div class="swiper-slide"><video src="img/tam4.mov" autoplay muted loop playsinline class="video"></video></div>
+                      <div class="swiper-slide"><img src="img/tam5.png" alt="Image 6" /></div>
                     </div>
                     <div class="swiper-pagination"></div>
                   </div>
@@ -226,17 +225,17 @@
             <!-- scrollup되는 효과  -->
             <section class="section fandom">
                 <div class="inner">
-                    <div class="leftBox">
+                    <div class="leftBox animate" data-animate="motion">
                         <p class="subtitle">02. Team project </p>
-                        <h2 class="maintitle en1">
-                        FANDOM APP<br />
-                        <span>Design & Development</span>
+                        <h2 class="maintitle en1" data-splitting>
+                        FANDOM App<br />
+                        <span class="en">Design & Development</span>
                         </h2>
                         <div class="btnGroup">
                             <a href="https://design-plan-link.com" target="_blank" class="btn1">Design plan</a>
                             <a href="https://launch-site-link.com" target="_blank" class="btn2">Launch Site</a>
                           </div>
-                        <p class="fandom-desc">
+                        <p class="fandom-desc"  data-splitting>
                             실제 사이트를 그대로 구현하며 구조, 스타일링, 인터렉션<br />
                             등 실전 기술을 익히기 위한 글툴 프로젝트입니다.
                           </p>
@@ -244,26 +243,48 @@
                     <div class="rightBox">
                         <div class="swiper fandomSwiper">
                           <div class="swiper-wrapper">
+                            <div class="swiper-slide a">
+                              <img src="img/fandom_1.png" alt="" />
+                            </div>    
                             <div class="swiper-slide">
-                              <img src="img/fandom.png" alt="" />
+                              <div class="mockup_video a">
+                                <video src="img/fandom_5.mp4" autoplay muted loop playsinline></video>
+                              </div>
                             </div>
                             <div class="swiper-slide">
-                              <img src="img/fandom.png" alt="" />
+                              <div class="mockup_video b">
+                                <video src="img/fandom_2.mp4" autoplay muted loop playsinline></video>
+                              </div>
                             </div>
-                          </div>
+                            <div class="swiper-slide">
+                              <div class="mockup_video c">
+                                <video src="img/fandom_3.mp4" autoplay muted loop playsinline></video>
+                              </div>
+                            </div>
+                            <div class="swiper-slide">
+                              <div class="mockup_video d">
+                                <video src="img/fandom_4.mp4" autoplay muted loop playsinline></video>
+                              </div>
+                            </div>
+                            <div class="swiper-slide">
+                              <div class="mockup_video d">
+                                <video src="img/fandom_6.mp4" autoplay muted loop playsinline></video>
+                              </div>
+                            </div>
                           <!-- 페이지네이션 (옵션) -->
-                          <div class="swiper-pagination"></div>
+                         
                         </div>
+                         <div class="swiper-pagination"></div>
                       </div>
                 </div>
             </section>
               
             <section class="section subway">
                 <div class="inner">
-                  <div class="leftBox">
+                    <div class="leftBox animate" data-animate="motion">
                     <p class="subtitle">03. Team project</p>
-                    <h2 class="maintitle en1">
-                      SUBWAY App <br /><span> UI/UX Renewal</span>
+                    <h2 class="maintitle en1" data-splitting>
+                      SUBWAY App <br /><span class="en"> UI/UX Renewal</span>
                     </h2>
                     <div class="btnGroup">
                       <a href="https://design-plan-link.com" target="_blank" class="btn1">Design plan</a>
@@ -274,11 +295,14 @@
                   <div class="rightBox">
                     <div class="swiper subwaySwiper">
                       <div class="swiper-wrapper">
-                        <div class="swiper-slide">
+                        <div class="swiper-slide a">
                           <img src="img/subway_mokupimg1.png" alt="Subway mockup 1" />
                         </div>
-                        <div class="swiper-slide">
-                          <img src="img/subway_mokupimg1.png" alt="Subway mockup 2" />
+                        <div class="swiper-slide b">
+                           <img src="img/subway2.png" alt="Subway mockup 2" />
+                        </div>
+                        <div class="swiper-slide b">
+                          <img src="img/subway3.png" alt="Subway mockup 2" />
                         </div>
                         <!-- 필요하면 슬라이드 추가 -->
                       </div>
@@ -292,10 +316,10 @@
 
             <section class="kbrand">
                 <div class="kbrand-textBox animate" data-animate="motion">
-                  <p class="kbrand-subtitle" data-splitting="">04. Clon works</p>
-                  <p class="kbrand-maintitle en1" data-splitting="">Clone Coding Project</p>
+                  <p class="kbrand-subtitle">04. Clon works</p>
+                  <p class="kbrand-maintitle en1" data-splitting>Clone Coding <span class="en">Project</span></p>
                   <p class="kbrand-description" data-splitting="">
-                    다양한 브랜드와 플랫폼을 바탕으로 구성된 클론 프로젝트 모음입니다.
+                    다양한 브랜드와 플랫폼을 바탕으로 구성된<br> 클론 프로젝트 모음입니다.
                   </p>
                   <!-- <div class="btnGroup">
                     <button class="btn1 en" target="_blank">Design plan</button>
@@ -303,65 +327,89 @@
                     </div> -->
                 </div>
             
-                <div class="kbrand-scrollBox">
-                  <div class="kbrand-center">
-                    <div class="kbrand-items">
-                      <!-- 8개 카드 예시 -->
-                      <div class="kbrand-item">
-                        <div class="kbrand-card">
-                          <img src="img/clon_slide1.png" alt="Slide 1" />
-                          <div class="kbrand-desc">이 카드는 1번째 이미지입니다.</div>
-                          <a href="https://example.com" class="kbrand-link" target="_blank" rel="noopener noreferrer">Lanch Site</a>
-                        </div>
-                      </div>
-                      <div class="kbrand-item">
-                        <div class="kbrand-card">
-                          <img src="img/clon_slide2.png" alt="Slide 2" />
-                          <div class="kbrand-desc">이 카드는 2번째 이미지입니다.</div>
-                          <a href="https://example.com" class="kbrand-link" target="_blank" rel="noopener noreferrer">Lanch Site</a>
-                        </div>
-                      </div>
-                      <div class="kbrand-item">
-                        <div class="kbrand-card">
-                          <img src="img/clon_slide3.png" alt="Slide 3" />
-                          <div class="kbrand-desc">이 카드는 3번째 이미지입니다.</div>
-                          <a href="https://example.com" class="kbrand-link" target="_blank" rel="noopener noreferrer">Lanch Site</a>
-                        </div>
-                      </div>
-                      <div class="kbrand-item">
-                        <div class="kbrand-card">
-                          <img src="img/clon_slide4.png" alt="Slide 4" />
-                          <div class="kbrand-desc">이 카드는 4번째 이미지입니다.</div>
-                          <a href="https://example.com" class="kbrand-link" target="_blank" rel="noopener noreferrer">Lanch Site</a>
-                        </div>
-                      </div>
-                      <div class="kbrand-item">
-                        <div class="kbrand-card">
-                          <img src="img/clon_slide5.png" alt="Slide 5" />
-                          <div class="kbrand-desc">이 카드는 5번째 이미지입니다.</div>
-                          <a href="https://example.com" class="kbrand-link" target="_blank" rel="noopener noreferrer">Lanch Site</a>
-                        </div>
-                      </div>
-                      <div class="kbrand-item">
-                        <div class="kbrand-card">
-                          <img src="img/clon_slide6.png" alt="Slide 6" />
-                          <div class="kbrand-desc">이 카드는 6번째 이미지입니다.</div>
-                          <a href="https://example.com" class="kbrand-link" target="_blank" rel="noopener noreferrer">Lanch Site</a>
-                        </div>
-                      </div>
-                      <div class="kbrand-item">
-                        <div class="kbrand-card">
-                          <img src="img/clon_slide1.png" alt="Slide 7" />
-                          <div class="kbrand-desc">이 카드는 1번째 이미지입니다.</div>
-                          <a href="https://example.com" class="kbrand-link" target="_blank" rel="noopener noreferrer">Lanch Site</a>
-                        </div>
-                      </div>
-                      <div class="kbrand-item">
-                        <div class="kbrand-card">
-                          <img src="img/clon_slide2.png" alt="Slide 8" />
-                          <div class="kbrand-desc">이 카드는 2번째 이미지입니다.</div>
-                          <a href="https://example.com" class="kbrand-link" target="_blank" rel="noopener noreferrer">Lanch Site</a>
-                        </div>
+             <div class="kbrand-scrollBox">
+  <div class="kbrand-center">
+    <div class="kbrand-items">
+      <!-- 8개 카드 예시 -->
+      <div class="kbrand-item">
+        <div class="kbrand-card">
+          <img src="img/clon_slide1.png" alt="Slide 1" />
+          <div class="kbrand-desc">
+            Slick 슬라이더의 페이드 전환과 자동 재생,<br />
+            동영상 배경, 텍스트 위치 설정으로 몰입감 있는 비주얼을 구현했습니다.
+          </div>
+          <a href="https://example.com" class="kbrand-link" target="_blank" rel="noopener noreferrer">Lanch Site</a>
+        </div>
+      </div>
+      <div class="kbrand-item">
+        <div class="kbrand-card">
+          <img src="img/clon_slide2.png" alt="Slide 2" />
+          <div class="kbrand-desc">
+            GNB 마우스 오버 애니메이션,<br />
+            스크롤 배경 전환, 반응형 햄버거 메뉴를 구현했습니다.
+          </div>
+          <a href="https://example.com" class="kbrand-link" target="_blank" rel="noopener noreferrer">Lanch Site</a>
+        </div>
+      </div>
+      <div class="kbrand-item">
+        <div class="kbrand-card">
+          <img src="img/clon_slide3.png" alt="Slide 3" />
+          <div class="kbrand-desc">
+            Slick 슬라이더 기반 마스크 이미지 효과와<br />
+            애니메이션을 결합해 강렬한 시각적 임팩트를 구현했습니다.
+          </div>
+          <a href="https://example.com" class="kbrand-link" target="_blank" rel="noopener noreferrer">Lanch Site</a>
+        </div>
+      </div>
+      <div class="kbrand-item">
+        <div class="kbrand-card">
+          <img src="img/clon_slide4.png" alt="Slide 4" />
+          <div class="kbrand-desc">
+            스크롤 위치에 따라 헤더, 텍스트, 메뉴 아이템 스타일 변화를 적용해<br />
+            인터랙티브한 경험을 구현했습니다.
+          </div>
+          <a href="https://example.com" class="kbrand-link" target="_blank" rel="noopener noreferrer">Lanch Site</a>
+        </div>
+      </div>
+      <div class="kbrand-item">
+        <div class="kbrand-card">
+          <img src="img/clon_slide5.png" alt="Slide 5" />
+          <div class="kbrand-desc">
+            텍스트 효과와 스크롤 진입 시 트리거되는 시각 효과를 적용해<br />
+            콘텐츠가 동적으로 나타나도록 구현했습니다.
+          </div>
+          <a href="https://example.com" class="kbrand-link" target="_blank" rel="noopener noreferrer">Lanch Site</a>
+        </div>
+      </div>
+      <div class="kbrand-item">
+        <div class="kbrand-card">
+          <img src="img/clon_slide6.png" alt="Slide 6" />
+          <div class="kbrand-desc">
+            Slick 슬라이더 기반 마스크 이미지 효과와 애니메이션을 접목해<br />
+            시각적 임팩트를 주는 슬라이드를 구현했습니다.
+          </div>
+          <a href="https://example.com" class="kbrand-link" target="_blank" rel="noopener noreferrer">Lanch Site</a>
+        </div>
+      </div>
+      <div class="kbrand-item">
+        <div class="kbrand-card">
+          <img src="img/clon_slide1.png" alt="Slide 7" />
+          <div class="kbrand-desc">
+            Slick 슬라이더의 페이드 전환과 자동 재생,<br />
+            동영상 배경, 텍스트 위치 설정으로 몰입감 있는 비주얼을 구현했습니다.
+          </div>
+          <a href="https://example.com" class="kbrand-link" target="_blank" rel="noopener noreferrer">Lanch Site</a>
+        </div>
+      </div>
+      <div class="kbrand-item">
+        <div class="kbrand-card">
+          <img src="img/clon_slide2.png" alt="Slide 8" />
+          <div class="kbrand-desc">
+            GNB 마우스 오버 애니메이션,<br />
+            스크롤 배경 전환, 반응형 햄버거 메뉴를 구현했습니다.
+          </div>
+          <a href="https://example.com" class="kbrand-link" target="_blank" rel="noopener noreferrer">Lanch Site</a>
+                   </div>
                       </div>
                     </div>
                   </div>
@@ -371,7 +419,7 @@
 
             <section class="section process">
                 <div class="inner">
-                    <div class="textBox">
+                    <div class="textBox animate" data-animate="motion">
                         <span class="en">Portfolio</span>
                         <span class="en1">P<span class="en2">rocess</span></span>
                     </div>
@@ -382,7 +430,10 @@
             </section>
             <section class="concept">
                 <div class="inner">
-                    <div class="textBox"><p class="title">From <span class="en1">P</span>rocess <br>to Concept</p><p class="smallText">과정에서 컨셉으로, <br>아이디어가 몰입형 경험으로 확장되는 과정을 간결하게 소개합니다</p></div>
+                    <div class="textBox animate" data-splitting  data-animate="motion"><p class="title">From <span class="en1">P</span>rocess <br>to Concept</p><p class="smallText">디자인을 구성하는 다섯 가지 요소를 소개합니다. <br>
+                    아이콘, 폰트, 컬러, 그리드, 반응형까지, 
+                    시각 언어의 질서를 체계적으로 설계합니다.</p>
+                    </div>
                     <p class="scrolldown">scroll down</p>
                     <span class="arrow"><img src="img/arrow_black.svg" alt=""></span>
                 </div>
@@ -391,7 +442,7 @@
            
             <section class="icons">
                 <div class="inner">
-                    <div class="leftBox">
+                       <div class="leftBox animate" data-animate="motion">
                         <ul class="iconSet">
                             <li class="icon1"><p class="img"><img src="img/icon1.png" alt=""></p></li>
                             <li class="icon2"><p class="img"><img src="img/icon2.png" alt=""></p></li>
@@ -400,7 +451,7 @@
                         </ul>
                     </div>
                     <div class="rightBox">
-                        <div class="textBox">
+                        <div class="textBox animate" data-animate="motion" data-splitting>
                             <p class="title">ICON</p>
                             <p class="smallText">모던함과 우아함, 감성을 균형 있게 담아낸 아이콘 셋.<br>각기 다른 결을 가진 네 가지 아이콘이 분위기와 메시지를 세심하게 전달합니다.</p>
                         </div>
@@ -424,17 +475,18 @@
 
             <section class="typo">
                 <div class="inner">
-                        <div class="leftBox">
-                            <div class="textBox">
+                          <div class="leftBox">
+                            <div class="textBox animate" data-animate="motion" data-splitting>
                                 <p class="title">TYPOGRAPHY</p>
-                                <p class="smallText">모던함과 우아함, 감성을 균형 있게 담아낸 폰트 셋.<br> 각기 다른 결을 가진 네 가지 서체가 분위기와 메시지를 세심하게 전달합니다.</p>
+                                <p class="smallText">타이포그래피는 시각적 톤을 완성하는 중요한 요소입니다. <br> Inter의 직선적 구조, Carien의 조형적 곡선, Pretendard의 균형 잡힌 한글 디자인. <br>
+세 가지 서체가 시각 언어의 밀도를 채워갑니다.</p>
                             </div>
                         </div>
-                        <div class="rightBox">
+                        <div class="rightBox animate" data-animate="motion">
                             <ul>
                                 <li>
                                     <p class="Aa en">Aa</p>
-                                    <p class="name en">Inter</p>
+                                    <p class="name en">Roboto</p>
                                     <p class="style">Medium | Semibold</p>
                                 </li>
                                 <li>
@@ -456,12 +508,16 @@
             </section>
             <section class="color">
                 <div class="inner">
-                    <div class="textBox">
+                    <div class="textBox animate" data-animate="motion" data-splitting>
                         <p class="title">COLOR</p>
-                        <p class="smallText">화려하고 다채로운 미디어 전시의 특징을 고려하여 컨텐츠 집중도를높이기 위해 무채색 컬러를 활용했습니다. 또한 어두운 컬러를 활용하여 무게감 있고 심층적인 분위기를 조성했습니다.</p>
+                        <p class="smallText">모던하고 세련된 무채색을 기본으로,
+포인트가 되는 라임 컬러를 더해 생동감을 부여했습니다.
+명암 대비를 활용해 깊이감과 집중도를 높였습니다.
+
+</p>
                     </div>
                 </div>
-                <div class="colorBox">
+                <div class="colorBox animate" data-animate="motion">
                     <ul>
                         <li><span class="colorList black"><span class="number">#0d0d0d</span></span></li>
                         <li><span class="colorList bgColor"><span class="number">#f9f9f6</span></span></li>
@@ -478,14 +534,14 @@
 
             <section class="gridsection">
                 <div class="title-wrap">
-                  <div class="title-group">
+                  <div class="title-group animate" data-animate="motion" data-splitting>
                     <div class="deconstruct en">Deconstruct</div>
                     <div class="grid-system en1">Grid System</div>
                   </div>
                 </div>
               
                 <!-- 그리드 컨테이너 -->
-                <div class="container-grid">
+                <div class="container-grid animate" data-animate="motion">
                     <!-- 컬럼: 기본 12개 -->
                     <div class="colum"></div>
                     <div class="colum"></div>
@@ -501,14 +557,14 @@
                     <div class="colum"></div>
               
                   <!-- 설명 텍스트 -->
-                  <div class="description">
-                    <div class="line1">Grid System · 반응형 지원</div>
-                    <div>해상도별 고정 px값 적용으로 정밀한 디자인 보장</div>
-                    <div>데스크탑, 태블릿, 모바일에 맞춘 컬럼 수 구성</div>
+                  <div class="description" data-splitting>
+                    <div class="line1">1920px Desktop  · 12 Column · Margin 120px · Gutter 24px  </div>
+                    <div>모든 해상도에 대응하는 유연한 구조. <br>
+                        정밀한 그리드가 시각적 흐름과 안정감을 만듭니다.</div>
                   </div>
               
                   <!-- GRIDS 텍스트 + 별 아이콘 -->
-                  <div class="grids-wrapper">
+                  <div class="grids-wrapper" data-splitting>
                     <div class="grids-text">GRIDS</div>
                     <div class="star-icon">
                       <img src="img/star2.png" alt="star icon" />
@@ -528,8 +584,8 @@
             <section class="interactive">
                 <div class="mainTitle">
                     <div class="inner">
-                        <div class="textBox">
-                            <p class="title">Interactive <br><span class="en1">D</span>esign</p>
+                        <div class="textBox animate" data-animate="motion" data-splitting>
+                            <p class="title">Interactive <br><span class="en1">Design</span></p>
                             <p class="smallText">다양한 디바이스에서도 일관된 경험을 제공하기 위해, <br>
                                 유연한 레이아웃과 시각적 균형을 고려해 반응형 디자인을 적용했습니다</p>
                         </div>
@@ -548,21 +604,21 @@
                     </div>
                     <div class="slideContainer">
                         <div class="slide active">
-                            <div class="deviceImage"><img src="img/musign-mockup.png" alt="Slide 1"/ width="700px"></div>
+                            <div class="deviceImage"><img src="img/mockup1.png" alt="Slide 1"/ ></div>
                             <div class="textBox animate" data-animate="motion" data-splitting>
                                 <p class="title">1400px</p>
                                 <p class="smallText">화면 크기에 따라 여백과 타이포그래피, 인터랙션 요소를 최적화하여 콘텐츠에 몰입할 수 있도록 설계했습니다.</p>
                             </div>
                         </div>
                         <div class="slide">
-                            <div class="deviceImage"><img src="img/mockupimg1.png" alt="Slide 2" /></div>
+                            <div class="deviceImage b"><img src="img/mockup2.png" alt="Slide 2" /></div>
                             <div class="textBox animate" data-animate="motion" data-splitting>
                                 <p class="title">1024px</p>
                                 <p class="smallText">태블릿 환경에서도 레이아웃이 자연스럽게 구성됩니다.</p>
                             </div>
                         </div>
                         <div class="slide">
-                            <div class="deviceImage"><img src="img/subway_mokupimg1.png" alt="Slide 3" width="450px"></div>
+                            <div class="deviceImage c"><img src="img/mockup3.png" alt="Slide 3"></div>
                             <div class="textBox animate" data-animate="motion" data-splitting>
                                 <p class="title">375px</p>
                                 <p class="smallText">모바일 환경에서도 편안하게 콘텐츠를 소비할 수 있습니다.</p>
@@ -612,12 +668,12 @@
         <span class="job en"> Web UX/UI Designer</span>
       </p>
     </div>
-    <div class="textBox en1">start a project now</div>
-    <div class="bottomText">
+    <div class="textBox en1 animate" data-animate="motion" data-splitting>start a project now</div>
+    <div class="bottomText animate" data-animate="motion" data-splitting>
       <p>
         포트폴리오를 끝까지 봐주셔서 감사합니다. <br>이 여정은 저의 디자인 성장 과정이자, 더 나은 사용자 경험을 향한 고민의 기록입니다. <br>함께 고민하고, 함께 성장하는 디자이너가 되겠습니다.
       </p>
-      <div class="button">
+      <div class="button animate" data-animate="motion" data-splitting>
         <a href="#" id="getInTouchBtn">GET IN TOUCH</a>
       </div>
     </div>
