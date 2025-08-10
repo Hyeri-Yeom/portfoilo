@@ -679,11 +679,6 @@ document.addEventListener("DOMContentLoaded", function () {
 탭 메뉴를 통해 활동 기록을 카테고리별로 나누고,<br>
 더보기 버튼을 통한 삭제 흐름을 구현해봤습니다.
 </p>`,
-`<p style="font-weight:600;margin-bottom:12px">라이브 페이지 기능 구현</p>
-<p style="font-weight:normal;">
-탭 메뉴를 통해 활동 기록을 카테고리별로 나누고,<br>
-더보기 버튼을 통한 삭제 흐름을 구현해봤습니다.
-</p>`,
 `<p style="font-weight:600;margin-bottom:12px">라이브 페이지 UI 코딩</p>
 <p style="font-weight:normal;">
 라이브 방송 UI를 코딩으로 구현했으며,<br>
