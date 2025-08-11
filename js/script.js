@@ -155,10 +155,10 @@ $(function(){
       });
     }
     
-    splitTextByChar('.title.en1');
+    splitTextByChar('.title.en');
     
     // 텍스트 초기 상태
-    gsap.set('.title.en1 span', {
+    gsap.set('.title.en span', {
       x: 0,
       y: 0,
       rotate: 0,
@@ -175,7 +175,7 @@ $(function(){
       transformOrigin: '50% 50%'
     });
     
-    gsap.to('.title.en1 span', {
+    gsap.to('.title.en span', {
       scrollTrigger: {
         trigger: '.about',
         start: 'top top',
