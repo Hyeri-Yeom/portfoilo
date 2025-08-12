@@ -180,7 +180,7 @@ $(function(){
         trigger: '.about',
         start: 'top top',
         end: '+=600',
-        scrub: true,
+        scrub: false,
         // markers: true,
       },
       x: () => gsap.utils.random(-20, 20), // 거의 움직이지 않음
@@ -437,35 +437,7 @@ tl.to(upBox, {
 });
 
 
-gsap.timeline({
-  scrollTrigger: {
-    trigger: '.start',
-    start: 'top bottom',  // 트리거 top이 뷰포트 bottom에 닿을 때
-    end: 'bottom top',    // 트리거 bottom이 뷰포트 top에 닿을 때
-    scrub: 2,
-  }
-})
-.to('footer .inner .textBox .icon', {
-  rotate: 260,
-  ease: 'none',
-});
 
-
-//디자인컨셉 아이콘 회전효과
-gsap.timeline({
-  scrollTrigger: {
-    trigger: '.process',
-    start: '80% 50%',
-    end: '+=600',
-    scrub: 3,
-  //   markers: true,
-  }
-})
-.to('.iconSet li.icon2 .img img', {
-  rotate: 230, 
-  duration: 10,
-  ease: 'none'
-});
 
 
 });
@@ -492,9 +464,34 @@ $(function () {
 });
 
 
+gsap.registerPlugin(ScrollTrigger);
 
+gsap.timeline({
+  scrollTrigger: {
+    trigger: '.start',
+    start: 'top bottom',
+    end: '+=200',  // 스크롤 범위 200px만큼
+    scrub: 2,
+    // markers: true,
+  }
+})
+.to('footer .inner .textBox .icon', {
+  rotation: 260,  // rotation으로 수정
+  ease: 'none',
+});
 
-
+gsap.timeline({
+  scrollTrigger: {
+    trigger: '.concept',
+    start: '+=300',
+    end: '+=600',
+    scrub: 3,
+  }
+})
+.to('.iconSet li.icon2 .img img', {
+  rotation: 230,  // rotate -> rotation
+  ease: 'none'
+});
 
 
 // section kbrand 카드 스크롤 효과
