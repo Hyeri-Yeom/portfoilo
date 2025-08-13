@@ -120,6 +120,7 @@ $(function(){
 
 
 
+<<<<<<< HEAD
   // archive 사진 갈라지는 효과
   gsap.timeline({
       scrollTrigger:{
@@ -128,6 +129,79 @@ $(function(){
           end:'bottom 100%',
           scrub:1,
           // markers:false
+=======
+    // archive 사진 갈라지는 효과
+    gsap.timeline({
+        scrollTrigger:{
+            trigger:'.archive',
+            start:'-50% top',
+            end:'bottom 100%',
+            scrub:1,
+            // markers:false
+        }
+    }) 
+    .to('.archive .inner .imgBox .img01',{x: '-300',y: '200',rotate: '-20',ease:'none',duration:3},0)
+    .to('.archive .inner .imgBox .img02',{x: '300',y: '200',rotate: '20',ease:'none',duration:3},0)
+    .to('.archive .inner .imgBox .img03',{x: '-350',y:'50',rotate: '-15',ease:'none',duration:4},0)
+    .to('.archive .inner .imgBox .img04',{x: '350',y:'50',rotate: '15',ease:'none',duration:4},0)
+    .to('.archive .inner .imgBox .img05',{x: '-200',y:'-50',rotate: '-20',ease:'none',duration:4},0)
+    .to('.archive .inner .imgBox .img06',{x: '200',y:'-50',rotate: '20',ease:'none',duration:4},0)
+    // .to('.archive .inner .text',{opacity:1,duration:1,ease:'none'},"-=2.4")
+
+
+
+
+    // 텍스트 쪼개기 함수
+    function splitTextByChar(selector) {
+      document.querySelectorAll(selector).forEach(el => {
+        const text = el.textContent.trim();
+        el.innerHTML = '';
+        text.split('').forEach(char => {
+          const span = document.createElement('span');
+          span.textContent = char === ' ' ? '\u00A0' : char;
+          span.style.display = 'inline-block';
+          el.appendChild(span);
+        });
+      });
+    }
+    
+    splitTextByChar('.title.en');
+    
+    // 텍스트 초기 상태
+    gsap.set('.title.en span', {
+      x: 0,
+      y: 0,
+      rotate: 0,
+      opacity: 1
+    });
+    
+    // 이미지 초기 상태
+    const image = document.querySelector('.hiddenimg img');
+    gsap.set(image, {
+      x: 0,
+      y: 0,
+      rotate: 16,
+      opacity: 1,
+      transformOrigin: '50% 50%'
+    });
+    
+    gsap.to('.title.en span', {
+      scrollTrigger: {
+        trigger: '.about',
+        start: 'top top',
+        end: '+=600',
+        scrub: false,
+        // markers: true,
+      },
+      x: () => gsap.utils.random(-20, 20), // 거의 움직이지 않음
+      y: () => gsap.utils.random(250, 400), // 👈 아래로 떨어지는 느낌!
+      rotate: () => gsap.utils.random(10, 60), // 자연스럽게 회전
+      opacity: 0,
+      ease: 'power2.out',
+      stagger: {
+        each: 0.02,
+        from: 'random'
+>>>>>>> c9d84200bafebfa09fc6bbd19784b948c2faaaf6
       }
   }) 
   .to('.archive .inner .imgBox .img01',{x: '-300',y: '200',rotate: '-20',ease:'none',duration:3},0)
@@ -503,6 +577,7 @@ gsap.to("#colorText", {
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.timeline({
+<<<<<<< HEAD
 scrollTrigger: {
   trigger: '.start',
   start: 'top bottom',
@@ -527,6 +602,32 @@ scrollTrigger: {
 .to('.iconSet li.icon2 .img img', {
 rotation: 230,  // rotate -> rotation
 ease: 'none'
+=======
+  scrollTrigger: {
+    trigger: '.start',
+    start: 'top bottom',
+    end: '+=200',  // 스크롤 범위 200px만큼
+    scrub: 2,
+    // markers: true,
+  }
+})
+.to('footer .inner .textBox .icon', {
+  rotation: 260,  // rotation으로 수정
+  ease: 'none',
+});
+
+gsap.timeline({
+  scrollTrigger: {
+    trigger: '.concept',
+    start: '+=300',
+    end: '+=600',
+    scrub: 3,
+  }
+})
+.to('.iconSet li.icon2 .img img', {
+  rotation: 230,  // rotate -> rotation
+  ease: 'none'
+>>>>>>> c9d84200bafebfa09fc6bbd19784b948c2faaaf6
 });
 
 
