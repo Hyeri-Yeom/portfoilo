@@ -180,7 +180,7 @@ $(function(){
         trigger: '.about',
         start: 'top top',
         end: '+=600',
-        scrub: false,
+        scrub: 1,
         // markers: true,
       },
       x: () => gsap.utils.random(-20, 20), // 거의 움직이지 않음
