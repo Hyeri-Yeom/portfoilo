@@ -257,8 +257,8 @@ align-items: center;color: #f9f9f9;}
 .btn1:hover { background:#ffffff;  color:#0d0d0d;transition: all 0.4s;  }
 .btn2 { background:#b1dd40;color:#0d0d0d;border: #b1dd40; }
 .btn2:hover { background: #fff; border: #fff;transition: all 0.4s; }
-.section.fandom .btn1:hover { background:#000000;  color:#fff;transition: all 0.4s;  }
-.section.fandom .btn2:hover { background: #000000; border: #fff;transition: all 0.4s;  color:#fff;}
+.section.fandom .btn1:hover { background:#0d0d0d;  color:#fff;transition: all 0.4s;  }
+.section.fandom .btn2:hover { background: #0d0d0d; border: #fff;transition: all 0.4s;  color:#fff;}
 /* portfolio process */
 .process{width: 100%;height: 100vh;background:  #0d0d0d;position: relative;}
 .process .inner {position: relative;width: 100%;height: 100%;display: flex;justify-content: center;align-items: center;}
