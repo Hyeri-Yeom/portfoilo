@@ -198,23 +198,7 @@ align-items: center;color: #f9f9f9;}
 .section.fandom .rightBox img{width:100%;object-fit:cover;height:100%;image-rendering: auto;}
 .mockup_video {width: 370px;height: auto;border-radius: 24px;overflow: hidden;margin:0 auto;}
 .mockup_video video{width: 100%;height: 100%;object-fit: cover;display: block;}
-/* .mockup_video.b {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 680px; 
-  gap: 20px;  
-  margin: 0 auto;
-}
 
-.mockup_video.b video,
-.mockup_video.b img {
-  width: calc((100% - 20px) / 2);  
-  height: 400px;                   
-  object-fit: cover;
-  border-radius: 24px;
-  display: block;
-} */
 
 
 .fandomSwiper{width:100%;height:auto;}
@@ -261,10 +245,10 @@ align-items: center;color: #f9f9f9;}
 /* 오버레이 설명 박스 */
 .kbrand-desc { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.8); color: #f9f9f9; display: flex; justify-content: center; align-items: center; font-size: 18px; font-weight: normal; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; padding: 20px; text-align: center; user-select: none; }
 .kbrand-card:hover .kbrand-desc { opacity: 1; }
-.kbrand-link {position: absolute;bottom: 24px;left: 50%;transform: translateX(-50%);background: rgba(0,0,0,0.8);color: #f9f9f9;padding: 12px 14px;border-radius: 50px;font-weight: 500;font-size: 16px;text-decoration: none;opacity: 0;pointer-events: none;transition: opacity 0.3s ease;white-space: nowrap;user-select: none;z-index: 20;background:#b1dd40;color:#0d0d0d;border: #b1dd40;transition: all 0.4s; }
+.kbrand-link {position: absolute;bottom: 24px;left: 50%;transform: translateX(-50%);background: rgba(0,0,0,0.8);color: #f9f9f9;padding: 12px 14px;border-radius: 50px;font-weight: 500;font-size: 14px;text-decoration: none;opacity: 0;pointer-events: none;transition: opacity 0.3s ease;white-space: nowrap;user-select: none;z-index: 20;background:#b1dd40;color:#0d0d0d;border: #b1dd40;transition: all 0.3s; }
 
 .kbrand-card:hover .kbrand-link {opacity: 1;pointer-events: auto;}
-.kbrand-link:hover {background: #fff; border: #fff;transition: all 0.4s;}
+.kbrand-link:hover {background: #fff; border: #fff;transition: all 0.3s;}
 
 /* 공통버튼레이아웃 */
 .btnGroup { display:flex; gap:16px; }
@@ -273,7 +257,8 @@ align-items: center;color: #f9f9f9;}
 .btn1:hover { background:#ffffff;  color:#0d0d0d;transition: all 0.4s;  }
 .btn2 { background:#b1dd40;color:#0d0d0d;border: #b1dd40; }
 .btn2:hover { background: #fff; border: #fff;transition: all 0.4s; }
-
+.section.fandom .btn1:hover { background:#000000;  color:#fff;transition: all 0.4s;  }
+.section.fandom .btn2:hover { background: #000000; border: #fff;transition: all 0.4s;  color:#fff;}
 /* portfolio process */
 .process{width: 100%;height: 100vh;background:  #0d0d0d;position: relative;}
 .process .inner {position: relative;width: 100%;height: 100%;display: flex;justify-content: center;align-items: center;}
