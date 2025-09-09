@@ -88,7 +88,7 @@ header:not(.on) {top: -100px;}
 /* aboutme */
 .aboutme {width:100%;height:100vh;display:flex;align-items:center;justify-content:center;  perspective: 1000px;}
 .aboutme .inner {max-width:1660px;margin:0 auto;width: 100%;}
-.aboutme .grid {display:grid;grid-template-columns:repeat(4,1fr);gap:12px;width: 100%;  padding: 1.5rem;box-sizing: border-box;}
+.aboutme .grid {display:grid;grid-template-columns:repeat(4,1fr);gap:12px;width: 100%; padding: 1.5rem;box-sizing: border-box;}
 
 .aboutme .card {width: clamp(280px, 100%, 402px); height: clamp(250px, 35vw, 356px);  background: #B1DD40;color: #000;padding: 1.5rem; /* 24px */display: flex;flex-direction: column;justify-content: space-between;border-radius: 20px;border-top-left-radius: 0;
 transform-style: preserve-3d;white-space: nowrap;box-sizing: border-box;}
@@ -286,9 +286,9 @@ align-items: center;color: #f9f9f9;}
 .textBand {position: relative;width: 100%;height: 50vh;}
 .textBand .inner {width: 100%;}
 .textBand .inner ul {display: flex;white-space: nowrap;font-size: 32px;letter-spacing: -1;color: #f9f9f9;position: absolute;width: 100%;box-sizing: border-box;overflow: hidden;padding: 6px 0;}
-.textBand .inner ul li {padding: 0 20px;width: 100%;display: flex;align-items: center;justify-content: center;vertical-align: middle;}
-.textBand .inner ul li span {width: 50px;height: 50px;display:inline-block;}
-.textBand .inner ul li span img {width: 100%;object-fit: cover;height: 100%;}
+.textBand .inner ul li {padding: 0 20px 0 0;width: 100%;display: flex;align-items: center;justify-content: center;vertical-align: middle;}
+.textBand .inner ul li span {width: 50px;height: 50px;margin-left: 10px;}
+.textBand .inner ul li span img {width: 100%;object-fit: contain;height: 100%;}
 .textBand .inner ul.top {transform: rotate(5deg);color: #f9f9f9;top: 200px;background: #0d0d0d;border-top: 1px solid #fff;border-bottom: 1px solid #fff;}
 .textBand ul.bottom {transform: rotate(-5deg);top: 180px;background: #0d0d0d;border-top: 1px solid #fff;border-bottom: 1px solid #fff;}
 
@@ -414,7 +414,7 @@ align-items: center;color: #f9f9f9;}
 
 /*Interactive */
 .interactive .mainTitle {width: 100%;height: 100vh;background: #0d0d0d;}
-.interactive .mainTitle .inner {width: 70%;margin: 0 auto;padding-top: 250px;}
+.interactive .mainTitle .inner {max-width: 1660px;width: 100%;margin: 0 auto;padding-top: 250px;}
 .interactive .mainTitle .textBox {color: #f9f9f9;}
 .interactive .mainTitle .textBox .title {margin-bottom: 30px;line-height: 1;}
 .interactive .mainTitle .textBox .smallText {margin-left:10px}
@@ -555,17 +555,59 @@ footer .inner .topnav .left li:hover {background: #fff;color: #b1dd40;}
 
 /* 반응형 */
 @media (max-width: 1536px) {
-.visual .innerVisual { padding: 120px 80px; width: 100%; gap: 24px;}
+.visual .innerVisual { padding: 120px 80px; width: 100%; gap: 10px;}
+.visual .top h2 { font-size: clamp(48px, 10vw, 120px);}
+.visual .middle h2 { font-size: clamp(48px, 10vw, 120px);}
+.visual .bottom h2 { font-size: clamp(48px, 10vw, 120px);}
+
+.visual .middle .visual__desc { margin-left: 24px; }
+.visual .middle .visual__desc p { font-size: 16px; line-height: 1.2; color: #dcdcdc; margin: 6px 0; }
+.visual .bottom { display: flex; align-items: center; justify-content: flex-end; }
+.visual .star.left-star img { width: clamp(50px, 20vw, 254px); height: auto; position: absolute; left: clamp(-130px, -10vw, -50px); top: clamp(-100px, -5vw, -30px); object-fit: contain; z-index: -999; animation: rotate360 30s linear infinite; animation-direction: reverse; }
+.visual .star img { width: clamp(50px, 20vw, 342px); height: auto; position: absolute; top: clamp(-150px, -10vw, -50px); right: clamp(-70px, -10vw, -50px); object-fit: contain; z-index: -999; opacity: 80%; animation: rotate360 30s linear infinite; }
+
+
+
+
 .archive .inner .imgBox {display: grid;grid-template-columns: repeat(2, minmax(0, 1fr));gap: 2.5rem;margin: 0 auto;width: 80%;}
 .archive .inner .imgBox .img {height: 360px;}
 .section.clon .inner { max-width:1360px;}
 .section.fandom .inner{max-width:1360px;}
 .section.subway .inner{ max-width:1360px;}
+.section.subway .rightBox{flex:1;display:flex;gap:20px;justify-content:flex-end;}
+.section.subway .rightBox img{width:100%;object-fit:cover;height:100%;}
+.section.subway .rightBox{position:relative;width:100%;max-width:580px;margin:0 auto;min-width: 220px}
+.subwaySwiper .swiper-slide{width:340px;  height:690px;}
+.subwaySwiper .swiper-slide.b img {width: 360px;height: 660px;object-fit:cover;display: block; border-radius: 32px;margin: 0 auto;}
+
+
 
 .kbrand { width: 100%; height: 100vh; position: relative; overflow: hidden;color: #f9f9f9; background:  #0d0d0d;}
+.kbrand-card {height: 260px;}
+.kbrand-desc {font-size: 16px; }
+/* grid section */
+.gridsection {height: 100vh;}
+.gridsection .title-wrap {width: 90%; max-width:none; margin: 60px auto 80px; padding: 0;}
+.gridsection .title-group {display: flex; flex-direction: column; align-items: flex-end; width:60%;}
+.gridsection .title-group .deconstruct {font-size: 98px;}
+.gridsection .title-group .grid-system {font-size: 98px;}
+.gridsection .container-grid {padding: 0 5vw; }
+.gridsection .description {position: absolute; bottom: 0; left: 102px;}
+.gridsection .grids-wrapper {top: 190px;right: 5vw;}
+.gridsection .grids-text {font-size: 192px;}
+.gridsection .star-icon {width:90px; height: 90px;}
 
-.mockup .inner .slideContainer .slide {top: 150px;}
+
+.concept .inner {max-width: none;width: 90%;}
+.interactive .mainTitle .inner {max-width: none;width: 90%;}
+
+.mockup .inner .slideContainer .slide {top: 120px;}
+.mockup .inner .slideContainer .textBox {bottom: 10%;}
+.mockup .inner .slideContainer .slide .textBox.a{bottom: -30px;}
+
 .Resume {white-space: nowrap;}
+footer .inner {padding: 250px 0;margin: 0 auto;box-sizing: border-box;width: 90%;}
+footer .inner .textBox {margin-top: 80px;}
 }
 
 
