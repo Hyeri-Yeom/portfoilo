@@ -195,7 +195,6 @@ align-items: center;color: #f9f9f9;}
 .section.fandom .rightBox{flex:1;display:flex;gap:20px;justify-content:flex-end;}
 .section.fandom .rightBox{position:relative;width:100%;margin:0 auto;max-width: 640px;min-width: 220px;}
 .section.fandom .rightBox img{width:100%;object-fit:cover;height:100%;image-rendering: auto;}
-.section.fandom .rightBox img{width:100%;object-fit:cover;height:100%;image-rendering: auto;}
 .mockup_video {width: 370px;height: auto;border-radius: 24px;overflow: hidden;margin:0 auto;}
 .mockup_video video{width: 100%;height: 100%;object-fit: cover;display: block;}
 
@@ -404,7 +403,7 @@ align-items: center;color: #f9f9f9;}
 .gridsection .star-icon {width: 118px; height: 118px; display: flex; justify-content: center; align-items: center;}
 .gridsection .star-icon img {width: 100%; height: 100%; filter: drop-shadow(0 0 5px #9fca0f); object-fit: cover;}
 
-.gridsection .guide {position: absolute; top: -44px; transform: translateX(-50%); font-size: 12px; font-weight: 700; color: #9fca0f; text-align: center; background-color: #000; padding: 2px 4px; z-index: 10;}
+.gridsection .guide {position: absolute; top: -44px; transform: translateX(-50%); font-size: 12px; font-weight: 700; color: #9fca0f; text-align: center; background-color: #0d0d0d; padding: 2px 4px; z-index: 10;}
 .gridsection .guide.gutter {left: calc(120px + (118px + 24px) * 10 + 118px + 12px);}
 .gridsection .guide.width {left: calc(120px + (118px + 24px) * 11 + 59px);}
 .gridsection .guide.margin {left: calc(120px + (118px + 24px) * 12 + 36px);}
@@ -566,25 +565,56 @@ footer .inner .topnav .left li:hover {background: #fff;color: #b1dd40;}
 .visual .star.left-star img { width: clamp(50px, 20vw, 254px); height: auto; position: absolute; left: clamp(-130px, -10vw, -50px); top: clamp(-100px, -5vw, -30px); object-fit: contain; z-index: -999; animation: rotate360 30s linear infinite; animation-direction: reverse; }
 .visual .star img { width: clamp(50px, 20vw, 342px); height: auto; position: absolute; top: clamp(-150px, -10vw, -50px); right: clamp(-70px, -10vw, -50px); object-fit: contain; z-index: -999; opacity: 80%; animation: rotate360 30s linear infinite; }
 
-
-
+.aboutme .inner {max-width: 1475px;padding: 0 1.5rem;}
+.aboutme .grid {display: grid;grid-template-columns: repeat(4, minmax(0, 1fr)); /* 균등 분배 */justify-items: center; /* 각 카드 가운데 정렬 */gap: 12px;}
+.aboutme .card {height: clamp(220px, 28vw, 320px);padding: 1.25rem;}
+.aboutme .card h3 {font-size: 36px;}
+.aboutme .card p {font-size: 14px;line-height: 1.4;}
+.aboutme .card.center .prof {font-size: 16px;}
+.aboutme .card.center .line {margin-bottom: 12px;}
 
 .archive .inner .imgBox {display: grid;grid-template-columns: repeat(2, minmax(0, 1fr));gap: 2.5rem;margin: 0 auto;width: 80%;}
 .archive .inner .imgBox .img {height: 360px;}
+
 .section.clon .inner { max-width:1360px;}
+.section.clon .swiper.clon-swiper { width: 720px;height: 430px;}
+.section.clon .swiper-slide .video {width: 720px;height:430px;}
+
 .section.fandom .inner{max-width:1360px;}
-.section.subway .inner{ max-width:1360px;}
-.section.subway .rightBox{flex:1;display:flex;gap:20px;justify-content:flex-end;}
-.section.subway .rightBox img{width:100%;object-fit:cover;height:100%;}
-.section.subway .rightBox{position:relative;width:100%;max-width:580px;margin:0 auto;min-width: 220px}
-.subwaySwiper .swiper-slide{width:340px;  height:690px;}
-.subwaySwiper .swiper-slide.b img {width: 360px;height: 660px;object-fit:cover;display: block; border-radius: 32px;margin: 0 auto;}
+.section.fandom .rightBox{max-width: 520px;}
+.section.fandom .rightBox img{width:100%;height:auto;}
+.fandomSwiper .swiper-horizontal>.swiper-pagination-bullets,.fandomSwiper .swiper-pagination-bullets.swiper-pagination-horizontal,.fandomSwiper .swiper-pagination-custom,.fandomSwiper .swiper-pagination-fraction{bottom: var(--swiper-pagination-bottom,0px);}
+.mockup_video {width: 320px;height: auto;}
+
+.section.subway .inner{max-width:1360px;}
+.section.subway .rightBox{max-width: 520px;}
+.section.subway .rightBox img{width:100%;height:auto;}
+.subwaySwiper .swiper-slide{width:340px;  height: auto;}
+.subwaySwiper .swiper-slide.b img {width: 340px;margin-bottom: 40px;}
 
 
 
 .kbrand { width: 100%; height: 100vh; position: relative; overflow: hidden;color: #f9f9f9; background:  #0d0d0d;}
 .kbrand-card {height: 260px;}
 .kbrand-desc {font-size: 16px; }
+
+
+/* portfolio process */
+.process .inner .textBox {text-align: center;color: #f9f9f9;position: relative;width: 80%;margin: 0 auto;height: 15vh;}
+.process .inner .imgBox {width: 280px;height: 130px;display: inline-block;position: absolute;z-index: 1;left: 40%;top: 50%;transform: translateY(-50%);filter: brightness(50%);}
+
+.bgText .textWrapper {font-size: 98px;max-width: 1360px; }
+
+/* icon */
+.icons .inner{width:80%;max-width:none;}
+.icons .textBox .smallText{white-space:nowrap;}
+/* typo*/
+.typo .inner {width: 80%;}
+.typo .inner .rightBox ul li .Aa {font-size: 180px;}
+.typo .inner .rightBox ul li .name {font-size:22px;}
+.typo .inner .rightBox ul li:nth-child(4) .Aa {font-size: 180px;}
+
+
 /* grid section */
 .gridsection {height: 100vh;}
 .gridsection .title-wrap {width: 90%; max-width:none; margin: 60px auto 80px; padding: 0;}
@@ -597,6 +627,8 @@ footer .inner .topnav .left li:hover {background: #fff;color: #b1dd40;}
 .gridsection .grids-text {font-size: 192px;}
 .gridsection .star-icon {width:90px; height: 90px;}
 
+/* 1536px 기준 guide 위치 */
+.gridsection .guide{display: none;}
 
 .concept .inner {max-width: none;width: 90%;}
 .interactive .mainTitle .inner {max-width: none;width: 90%;}
