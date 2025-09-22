@@ -122,7 +122,7 @@ transform-style: preserve-3d;white-space: nowrap;box-sizing: border-box;}
 .favorite .textLoop {width: 100%;position: relative;top: 50%;transform: translateY(-50%);}
 .favorite .textLoop ul {display: flex;white-space: nowrap;font-size: 100px;font-weight:500;height: 120px;align-items: center;justify-content: center;text-align: center;vertical-align: middle;animation: textLoop 10s linear infinite;padding: 0 20px;}
 .favorite .textLoop .line2{animation: textLoop2 10s linear infinite;padding: 0 20px;}
-.favorite .textLoop ul li img {margin-right: 12px;height: 86px;width: 100%;object-fit: cover;display: inline-block;margin-bottom: 12px;}
+.favorite .textLoop ul li img {margin-right: 12px;height: 86px;width: 100%;object-fit: cover;display: inline-block;margin-bottom: 12px;width: 86px;}
 
 @keyframes textLoop {
     0% {transform: translate3d(-50%,0,0)}
@@ -298,7 +298,7 @@ align-items: center;color: #f9f9f9;}
 
 /* icon */
 .icons{width:100%;height:100vh;background:#0d0d0d;display:flex;justify-content:center;align-items:center;color:#fff;}
-.icons .inner{width:100%;max-width:1200px;padding:0 20px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:40px;}
+.icons .inner{width:100%;max-width:1200px;padding:0 20px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:40px;}
 .icons .leftBox{flex:1 1 50%;}
 .icons .rightBox{flex:1 1 45%;}
 .icons .iconSet{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;width:100%;max-width:400px;}
@@ -576,17 +576,17 @@ footer .inner .topnav .left li:hover {background: #fff;color: #b1dd40;}
 .archive .inner .imgBox {display: grid;grid-template-columns: repeat(2, minmax(0, 1fr));gap: 2.5rem;margin: 0 auto;width: 80%;}
 .archive .inner .imgBox .img {height: 360px;}
 
-.section.clon .inner { max-width:1360px;}
+.section.clon .inner { max-width:1360px;padding: 0 40px;}
 .section.clon .swiper.clon-swiper { width: 720px;height: 430px;}
 .section.clon .swiper-slide .video {width: 720px;height:430px;}
 
-.section.fandom .inner{max-width:1360px;}
+.section.fandom .inner{max-width:1360px;padding: 0 40px;}
 .section.fandom .rightBox{max-width: 520px;}
 .section.fandom .rightBox img{width:100%;height:auto;}
 .fandomSwiper .swiper-horizontal>.swiper-pagination-bullets,.fandomSwiper .swiper-pagination-bullets.swiper-pagination-horizontal,.fandomSwiper .swiper-pagination-custom,.fandomSwiper .swiper-pagination-fraction{bottom: var(--swiper-pagination-bottom,0px);}
 .mockup_video {width: 320px;height: auto;}
 
-.section.subway .inner{max-width:1360px;}
+.section.subway .inner{max-width:1360px;padding: 0 40px;}
 .section.subway .rightBox{max-width: 520px;}
 .section.subway .rightBox img{width:100%;height:auto;}
 .subwaySwiper .swiper-slide{width:340px;  height: auto;}
@@ -651,9 +651,67 @@ footer .inner .textBox {margin-top: 80px;}
 
 
 @media (max-width: 1024px) {
-  .visual .middle { flex-direction: column; align-items: flex-start; }
-  .visual .middle .visual__desc { margin-left: 0; }
-  .visual .bottom { justify-content: center; text-align: center; }
+.visual .innerVisual {max-width: none;}
+.about .inner .title { font-size: 72px;}
+.about .hiddenimg { max-width: 300px;height: 328px; }
+
+.aboutme .inner {max-width: 1475px;padding: 0 1.5rem;}
+.aboutme .grid {display: grid;grid-template-columns: repeat(3, minmax(0, 1fr)); /* 균등 분배 */justify-items: center; /* 각 카드 가운데 정렬 */gap: 12px;}
+.aboutme .card {height: clamp(220px, 28vw, 320px);padding: 1.25rem;}
+.aboutme .card h3 {font-size: 36px;}
+.aboutme .card p {font-size: 14px;line-height: 1.4;white-space: wrap;}
+.aboutme .card.center .prof {font-size: 12px;margin-bottom: 2px;}
+.aboutme .card.center .line {margin-bottom: 8px;}
+.aboutme .card.center .star {width: 32px;height: 32px;}
+.aboutme .card.empty {display: none;}
+
+.favorite .textLoop ul {font-size:72px;height: 72px;}
+.favorite .textLoop ul li img {width: 50px;height: 50px;}
+
+
+
+.section.clon .inner {flex-direction: column;align-items: center;justify-content: center;text-align: center;margin-top: 30px;margin-bottom: 30px;}
+.section.clon .left {margin-bottom: 32px;}
+.section.clon .section-number { color: #b1dd40; font-size: 14px; }
+.section.clon .section-title { font-size:48px; line-height: 1; margin-bottom: 20px;display: flex;}
+.section.clon .section-title span.en {margin-left: 16px;}
+.section.clon .clon-desc {margin-top: 30px;}
+.section.clon .btnGroup { align-items: center;justify-content: center;}
+.section.clon .swiper.clon-swiper { width: 620px;height: 350px;}
+.section.clon .swiper-slide .video {width: 620px;height:350px;}
+
+.section.fandom .maintitle {font-size: 48px;}
+.section.subway .maintitle {font-size: 48px;}
+.kbrand-textBox .kbrand-maintitle{font-size: 48px;}
+
+.process .inner .textBox {font-size: 72px;width: 80%;}
+
+.concept .textBox {font-size: 72px;}
+.concept .textBox .smallText {font-size: 16px;}
+.concept .arrow {width: 120px;}
+.bgText .textWrapper {font-size: 98px;max-width: 1360px; }
+
+/* typo*/
+.typo .inner {width: 80%;}
+.typo .inner .rightBox ul li .Aa {font-size: 180px;}
+.typo .inner .rightBox ul li .name {font-size:22px;}
+.typo .inner .rightBox ul li:nth-child(4) .Aa {font-size: 180px;}
+
+
+/* grid section */
+.gridsection {height: 100vh;}
+.gridsection .title-wrap {width: 90%; max-width:none; margin: 60px auto 80px; padding: 0;}
+.gridsection .title-group {display: flex; flex-direction: column; align-items: flex-end; width:60%;}
+.gridsection .title-group .deconstruct {font-size: 98px;}
+.gridsection .title-group .grid-system {font-size: 98px;}
+.gridsection .container-grid {padding: 0 5vw; }
+.gridsection .description {position: absolute; bottom: 0; left: 102px;}
+.gridsection .grids-wrapper {top: 190px;right: 5vw;}
+.gridsection .grids-text {font-size: 192px;}
+.gridsection .star-icon {width:90px; height: 90px;}
+
+/* 1536px 기준 guide 위치 */
+.gridsection .guide{display: none;}
 }
 
 
@@ -663,8 +721,10 @@ footer .inner .textBox {margin-top: 80px;}
 
 
 
-@media (max-width: 600px) {
+
+@media (max-width: 768px) {
   .visual .innerVisual { padding: 60px 16px; gap: 30px; }
   .visual .middle .visual__desc p { font-size: 16px; }
   .visual .star img { width: 60px; height: 60px; }
 }
+
