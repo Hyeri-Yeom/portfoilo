@@ -755,7 +755,53 @@ footer .inner .topnav .right {width: auto;}
 }
 @media (max-width: 450px) {
   .visual .innerVisual {padding: 130px 16px;}
-  
+  .visual .middle .visual__desc p { font-size: 14px;}
+  .visual .star img {top: 0;right: 10px;}
+  .visual .star.left-star img {top: -20px;left: -20px;}
+  .visual .top h2 {font-size: 38px;}
+  .visual .middle h2 {font-size: 38px;}
+  .visual .bottom h2 {font-size: 38px;}
+  .visual .middle {flex-direction: column;align-items:first baseline;}
+
+  .about .inner .title {font-size: 28px;}
+  .about .hiddenimg {height: 180px;max-width: 150px;min-width: 100px;top: 30%;}
+   .aboutme .grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min(80vw, 400px);
+    gap: 16px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    grid-template-columns: unset;
+    justify-items: unset;
+    box-sizing: border-box;
+  }
+
+  .aboutme .grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .aboutme .card {
+    scroll-snap-align: center;
+    animation: none;
+    height: 262px;
+  }
+  .aboutme .card:hover { animation: none; }
+  .favorite .textLoop ul {font-size: 28px;height: 28px;}
+  .favorite .textLoop ul li img {width: 25px;height: 25px;margin-bottom: 4px;margin-right: 4px;}
+  .favorite {height: 50vh;}
+  .archive {padding-bottom: 0;}
+  .archive .inner .text {font-size: 14px;}
+  .archive .inner .text h2 {font-size: 28px;}
+  .archive .inner .imgBox .img {height: 120px;}
+  .archive .inner .imgBox {gap: 14px;}
+
+  .skill .inner .textBox {font-size: 28px;margin-bottom: 100px;}
+  .skill .inner .scrollBox .track .icon img {width: 50%;}
+  .skill .inner .scrollBox .track .icon p {font-size: 16px;line-height: 16px;}
+  .skill .inner {padding-top: 0;}
+.skill {height: 50vh;}
 }
 
 

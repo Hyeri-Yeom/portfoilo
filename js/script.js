@@ -227,26 +227,28 @@ const aboutTl = gsap.timeline({
 
 
 // 카드 등장 (clip-path보다 약간 늦게 시작되도록 offset 설정)
-gsap.utils.toArray(".aboutme .card").forEach((card, i) => {
-  if (card.classList.contains('empty')) return;
+if (window.innerWidth > 768) {
+  gsap.utils.toArray(".aboutme .card").forEach((card, i) => {
+    if (card.classList.contains('empty')) return;
 
-  gsap.fromTo(card,
-    { opacity: 0, rotateY: -60, y: 50 },
-    {
-      opacity: 1,
-      rotateY: 0,
-      y: 0,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: card,
-        start: "top 85%",
-        end: "top 40%",     // 언제 사라질지 범위 지정
-        scrub: true,        // 스크롤에 따라 자연스럽게 애니메이션
-        // markers: true
+    gsap.fromTo(card,
+      { opacity: 0, rotateY: -60, y: 50 },
+      {
+        opacity: 1,
+        rotateY: 0,
+        y: 0,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: card,
+          start: "top 85%",
+          end: "top 40%",
+          scrub: true,
+          // markers: true
+        }
       }
-    }
-  );
-});
+    );
+  });
+}
 
 
 //  skill 무한반복 애니메이션
