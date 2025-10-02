@@ -553,26 +553,28 @@ const enableRotationDrag = () => {
   let dragStartX = 0;
   let dragDeltaX = 0;
 
-  const onMouseDown = (e) => {
+  const getClientX = (e) => e.touches ? e.touches[0].clientX : e.clientX;
+
+  const onDown = (e) => {
     isDragging = true;
-    dragStartX = e.clientX;
+    dragStartX = getClientX(e);
     lastX = dragStartX;
     document.body.style.cursor = 'grabbing';
   };
 
-  const onMouseMove = (e) => {
+  const onMove = (e) => {
     if (!isDragging) return;
 
-    dragDeltaX = e.clientX - lastX;
-    rotation += dragDeltaX * 0.5; // 감도 조절
+    dragDeltaX = getClientX(e) - lastX;
+    rotation += dragDeltaX * 0.5;
     gsap.set(items, { rotation });
-    lastX = e.clientX;
+    lastX = getClientX(e);
   };
 
-  const onMouseUp = () => {
+  const onUp = () => {
     if (!isDragging) return;
     isDragging = false;
-    velocity = dragDeltaX * 0.5; // 관성 감속 시작
+    velocity = dragDeltaX * 0.5;
     animateRotation();
     document.body.style.cursor = 'default';
   };
@@ -580,8 +582,7 @@ const enableRotationDrag = () => {
   const animateRotation = () => {
     rotation += velocity;
     gsap.set(items, { rotation });
-    velocity *= 0.94; // 감속율
-
+    velocity *= 0.94;
     if (Math.abs(velocity) > 0.2) {
       requestAnimationFrame(animateRotation);
     } else {
@@ -589,10 +590,15 @@ const enableRotationDrag = () => {
     }
   };
 
-  // 이벤트 등록
-  items.addEventListener("mousedown", onMouseDown);
-  window.addEventListener("mousemove", onMouseMove);
-  window.addEventListener("mouseup", onMouseUp);
+  // 데스크탑
+  items.addEventListener("mousedown", onDown);
+  window.addEventListener("mousemove", onMove);
+  window.addEventListener("mouseup", onUp);
+
+  // 모바일
+  items.addEventListener("touchstart", onDown, { passive: true });
+  window.addEventListener("touchmove", onMove, { passive: true });
+  window.addEventListener("touchend", onUp);
 };
 
 init();

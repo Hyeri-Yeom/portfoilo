@@ -830,6 +830,67 @@ footer .inner .topnav .right {width: auto;}
 .subwaySwiper .swiper-slide{width:300px;height:250px;}
 .subwaySwiper .swiper-slide.b img {width: 300px;margin-bottom: 40px;}
 
+.kbrand-textBox .kbrand-maintitle{font-size: 26px;}
+.kbrand-textBox .kbrand-description{font-size: 14px;}
+.kbrand-desc{font-size: 14px;}
+.kbrand-card{height: 200px;}
+
+.process .inner .imgBox {display: none;}
+.process .inner .textBox {font-size: 28px;
+}
+.concept .textBox {font-size: 28px;}
+.concept .textBox .smallText {font-size: 14px;margin-left: 0;}
+.concept .scrolldown{margin-left: 0;font-size: 16px;}
+.concept .arrow {width: 50px;}
+.icons .iconSet {max-width: none;justify-content:center}
+.icons .inner {width: 100%;}
+.icons .textBox .title {font-size: 16px;}
+.icons .textBox .smallText{white-space:wrap;font-size: 14px;}
+.bgText .textWrapper{font-size: 38px;}
+.typo .inner {flex-direction: column-reverse;justify-content: center;width: 100%;padding: 0 20px;}
+.typo .inner .rightBox ul li .Aa{font-size: 90px;}
+.typo .inner .rightBox ul li:nth-child(4) .Aa {font-size: 90px;}
+.typo .inner .rightBox ul li .name{font-size: 16px;}
+.typo .inner .rightBox ul li .style{font-size: 12px;}
+.typo .inner .rightBox ul li{width: 50%}
+.typo .inner .textBox {margin-top: 80px;}
+.typo .inner .textBox .title{font-size: 16px;}
+.textBox .smallText{font-size: 14px;}
+.typo .inner .leftBox {width: 100%;}
+.color {flex-direction: column-reverse;}
+.color .inner{width: 100%;padding:0 20px;}
+.color .inner .textBox {margin-left: 0;margin-bottom: 0;width: 100%;margin-top: 80px;} 
+.color .colorBox ul li .colorList {padding: 0;font-weight: normal;}
+.color .colorBox ul li:nth-child(6) { flex: 1; }
+.gridsection .title-group .deconstruct{font-size: 28px;}
+.gridsection .title-group .grid-system {font-size: 28px;}
+.gridsection .title-wrap {margin: 120px auto 80px;}
+.interactive .mainTitle .textBox .title{font-size: 28px;}
+.interactive .mainTitle .textBox .smallText{margin-left: 0;}
+.interactive .mainTitle .scrolldown{margin-left: 0;font-size: 16px;}
+.interactive .mainTitle .arrow{width: 50px;}
+.mockup .inner .backgroundTextWrap{font-size: 38px;}
+.mockup .inner .slideContainer .slide .deviceImage {width: 250px;}
+.mockup .inner .slideContainer .slide .deviceImage.b{width: 300px;}
+.mockup .inner .slideContainer .slide .deviceImage.c {width: 200px;}
+.mockup .inner .slideContainer .slide {top: 230px;}
+.mockup .inner .slideContainer .slide .textBox.a {bottom: 0;}
+.mockup .inner .slideContainer .slide .deviceImage{margin-bottom: 100px;}
+.mockup .inner .slideContainer .slide .deviceImage.c{margin-bottom: 100px;}
+.mockup .inner .slideContainer .textBox {left: 0;width: 100%;}
+.textBand .inner ul {font-size: 16px;}
+.textBand .inner ul li span {width: 30px;height: 30px;}
+.start .inner .topText {font-size: 16px;}
+.start .inner .textBox {font-size: 38px;}
+.start .inner .bottomText p{font-size: 14px;}
+.start .inner {padding: 0 20px;}
+footer .inner {padding: 250px 0;margin: 0 auto;box-sizing: border-box;width: 90%;}
+footer .inner .textBox {margin-top:120px;font-size: 38px;}
+footer .inner .textBox .icon {width:50px;}
+footer .inner .textBox .arrow img {width: 50px;}
+footer .inner .topnav {flex-direction: column;align-items: baseline;}
+footer .inner .topnav .right{margin-top: 16px;}
+footer .inner .topnav .right .logo img{width: 30px;}
 }
 
 
