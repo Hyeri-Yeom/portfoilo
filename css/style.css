@@ -802,6 +802,34 @@ footer .inner .topnav .right {width: auto;}
   .skill .inner .scrollBox .track .icon p {font-size: 16px;line-height: 16px;}
   .skill .inner {padding-top: 0;}
 .skill {height: 50vh;}
+
+.section.clon .inner {padding: 0 20px;}
+.section.clon .section-title {font-size: 26px;display: flex;justify-content: center;}
+.section.clon .section-title span.en {margin-left: 8px;}
+.section.clon .clon-desc p {font-size: 14px;}
+.section.clon .swiper.clon-swiper { width: 300px;height: 180px;}
+.section.clon .swiper-slide .video {width: 300px;height:180px;}
+
+
+.section.fandom .inner {padding: 0 20px;flex-direction: column;align-items: center;justify-content: center;text-align: center;margin-top: 30px;margin-bottom: 30px;}
+.btnGroup { align-items: center;justify-content: center;}
+.section.fandom .maintitle{font-size: 26px;}
+.section.fandom .rightBox {max-width:300px;}
+.section.fandom .rightBox img{object-fit: contain;height: 250px;}
+.mockup_video {width: 300px;height:250px;}
+.fandom-desc {font-size: 14px;margin-top:30px;}
+.section.fandom .leftBox {margin-bottom: 32px;}
+
+.section.subway .leftBox {margin-bottom: 32px;}
+.section.subway .maintitle {font-size: 26px;display: flex;justify-content: center;}
+.section.subway .maintitle .en {margin-left: 8px;}
+.section.subway .inner{padding: 0 20px;flex-direction: column;align-items: center;justify-content: center;text-align: center;margin-top: 30px;margin-bottom: 30px;}
+.section.subway .rightBox{max-width: 300px;}
+.section.subway .rightBox img{width:100%;height:250px;object-fit: contain;}
+.descriptionText.subway-desc {font-size: 14px;}
+.subwaySwiper .swiper-slide{width:300px;height:250px;}
+.subwaySwiper .swiper-slide.b img {width: 300px;margin-bottom: 40px;}
+
 }
 
 
